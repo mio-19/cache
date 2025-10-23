@@ -56,7 +56,11 @@
           in
           {
             packages = {
-              linuxPackages_jovian = pkgs.linuxPackages_jovian;
+              inherit (pkgs) linuxPackages_jovian;
+              default = pkgs.stdenv.mkDerivation {
+                name = "default";
+                buildInputs = with pkgs; [ linuxPackages_jovian.kernel ];
+              };
             };
           };
       }
