@@ -21,6 +21,8 @@ jobs:
           - ubuntu-22.04-arm
         cachixName:
           - mio-cache
+        nixPath:
+          - nixpkgs=https://github.com/NixOS/nixpkgs/archive/refs/heads/nixos-unstable-small.tar.gz
     runs-on: "${{ matrix.os }}"
     steps:
     - name: Checkout repository
