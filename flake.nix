@@ -56,7 +56,7 @@
           in
           {
             packages = {
-              inherit (pkgs) linuxPackages_jovian;
+              inherit (pkgs) linux_jovian;
             };
           };
       }
