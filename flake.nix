@@ -61,7 +61,7 @@
             lib = inputs.nixpkgs.lib;
           in
           {
-            packages = liv.mkMerge [
+            packages = lib.mkMerge [
               {
                 inherit (pkgs') remmina librewolf thunderbird-esr;
               }
