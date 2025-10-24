@@ -34,6 +34,8 @@ jobs:
         extra_nix_config: |
           experimental-features = nix-command flakes
           access-tokens = github.com=${{ secrets.GITHUB_TOKEN }}
+          trusted-public-keys = mio-cache.cachix.org-1:ouuIJZ59HIflYjpLW6DRyMc1c+6r3kC/LHuqGUsWigg=
+          substituters = hhttps://mio-cache.cachix.org/ https://cache.nixos.org/
     - name: Setup cachix
       uses: cachix/cachix-action@v16
       # Don't replace <YOUR_CACHIX_NAME> here!
