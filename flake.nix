@@ -1,6 +1,7 @@
 {
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable-small";
+    nixpkgs-staging.url = "github:NixOS/nixpkgs/staging";
     jovian = {
       url = "git+https://github.com/Jovian-Experiments/Jovian-NixOS.git";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -54,10 +55,14 @@
                 inputs.chaotic.overlays.default
               ];
             };
+            pkgs' = import inputs.nixpkgs-staging {
+              inherit system;
+            };
             lib = inputs.nixpkgs.lib;
           in
           {
             packages = {
+              inherit (pkgs') remmina librewolf thunderbird-esr;
               linux_jovian = lib.mkIf (system == "x86_64-linux") pkgs.linux_jovian;
               default = lib.mkIf (system == "x86_64-linux") (
                 pkgs.stdenv.mkDerivation rec {
