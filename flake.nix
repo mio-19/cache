@@ -63,7 +63,7 @@
           {
             packages = {
               inherit (pkgs') remmina librewolf thunderbird-esr;
-              linux_jovian = lib.mkIf (system == "x86_64-linux") pkgs.linux_jovian;
+              #linux_jovian = lib.mkIf (system == "x86_64-linux") pkgs.linux_jovian;
               default = lib.mkIf (system == "x86_64-linux") (
                 pkgs.stdenv.mkDerivation rec {
                   name = "example-package-${version}";
