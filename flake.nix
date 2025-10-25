@@ -73,17 +73,19 @@
               (lib.mkIf (system == "x86_64-linux") {
                 inherit (pkgs) davinci-resolve;
                 #linux_jovian = pkgs.linux_jovian;
-                /*default = (
-                  pkgs.stdenv.mkDerivation rec {
-                    name = "example-package-${version}";
-                    version = "1.0";
-                    src = ./.;
-                    # cache dependencies for those packages:
-                    buildInputs = with pkgs; davinci-resolve.nativeBuildInputs;
-                    buildPhase = "echo echo Hello World > example";
-                    installPhase = "install -Dm755 example $out";
-                  }
-                );*/
+                /*
+                  default = (
+                    pkgs.stdenv.mkDerivation rec {
+                      name = "example-package-${version}";
+                      version = "1.0";
+                      src = ./.;
+                      # cache dependencies for those packages:
+                      buildInputs = with pkgs; davinci-resolve.nativeBuildInputs;
+                      buildPhase = "echo echo Hello World > example";
+                      installPhase = "install -Dm755 example $out";
+                    }
+                  );
+                */
               })
             ];
           };
