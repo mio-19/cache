@@ -68,7 +68,7 @@
                 #inherit (pkgs') remmina librewolf thunderbird-esr;
               }
               (lib.mkIf (pkgs.stdenv.isLinux) {
-                inherit (pkgs) totem gnome-control-center;
+                inherit (pkgs) totem gnome-session;
               })
               (lib.mkIf (system == "x86_64-linux") {
                 inherit (pkgs) davinci-resolve;
