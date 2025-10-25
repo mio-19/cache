@@ -6,6 +6,11 @@
       url = "git+https://github.com/Jovian-Experiments/Jovian-NixOS.git";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nixpkgs-darwin.url = "github:NixOS/nixpkgs/2fbfb821ecd9b238477e64fb8bc3724112f4e7b3";
+    darwin-emacs = {
+      url = "github:nix-giant/nix-darwin-emacs";
+      inputs.nixpkgs.follows = "nixpkgs-darwin";
+    };
     chaotic.url = "git+https://github.com/chaotic-cx/nyx.git?ref=nyxpkgs-unstable";
     rosetta-spice.url = "github:zhaofengli/rosetta-spice";
     nixos-apple-silicon = {
@@ -43,19 +48,31 @@
           "x86_64-darwin"
         ];
         perSystem =
-          {
+          args@{
             system,
+            pkgs,
             ...
           }:
           let
-            pkgs = import inputs.nixpkgs {
-              inherit system;
-              config.allowUnfree = true;
-              overlays = [
-                inputs.jovian.overlays.default
-                inputs.chaotic.overlays.default
-              ];
-            };
+            pkgs =
+              if (args.pkgs.stdenv.isLinux) then
+                import inputs.nixpkgs {
+                  inherit system;
+                  config.allowUnfree = true;
+                  overlays = [
+                    inputs.jovian.overlays.default
+                    inputs.chaotic.overlays.default
+                  ];
+                }
+              else
+                import inputs.nixpkgs-darwin {
+                  inherit system;
+                  config.allowUnfree = true;
+                  overlays = [
+                    inputs.darwin-emacs.overlays.default
+                    inputs.chaotic.overlays.default
+                  ];
+                };
             pkgs' = import inputs.nixpkgs-staging {
               inherit system;
               config.allowUnfree = true;
@@ -64,6 +81,9 @@
           in
           {
             packages = lib.mkMerge [
+              (lib.mkIf (pkgs.stdenv.isDarwin) {
+                inherit (pkgs) emacs-unstable emacs-30;
+              })
               {
                 #inherit (pkgs') remmina librewolf thunderbird-esr;
               }
