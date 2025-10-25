@@ -17,7 +17,7 @@ jobs:
       fail-fast: false
       matrix:
         os:
-          - ubuntu-24.04
+          - ubuntu-22.04
           - ubuntu-22.04-arm
           - macos-15
         cachixName:
@@ -26,19 +26,8 @@ jobs:
           - nixpkgs=https://github.com/NixOS/nixpkgs/archive/refs/heads/nixos-unstable-small.tar.gz
     runs-on: "${{ matrix.os }}"
     steps:
-    - name: Maximize build space
+    - run: sudo sysctl kernel.apparmor_restrict_unprivileged_userns=0
       if: runner.os == 'Linux'
-      uses: mio-19/maximize-build-space@patch-1
-      with:
-        root-reserve-mb: 512
-        swap-size-mb: 40000
-        overprovision-lvm: 'true'
-        remove-dotnet: 'true'
-        remove-android: 'true'
-        remove-haskell: 'true'
-        remove-codeql: 'true'
-        remove-docker-images: 'true'
-        build-mount-path: /nix
     - name: Checkout repository
       uses: actions/checkout@v5
     - name: Install nix
