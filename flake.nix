@@ -63,7 +63,7 @@
           {
             packages = lib.mkMerge [
               {
-                inherit (pkgs') remmina librewolf thunderbird-esr;
+                #inherit (pkgs') remmina librewolf thunderbird-esr;
               }
               (lib.mkIf (system == "x86_64-linux") {
                 linux_jovian = pkgs.linux_jovian;
