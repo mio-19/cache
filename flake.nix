@@ -22,6 +22,12 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     flake-parts.url = "github:hercules-ci/flake-parts";
+    nixpkgs-stable.url = "github:NixOS/nixpkgs/nixpkgs-25.05-darwin";
+    emacs-overlay = {
+      url = "github:nix-community/emacs-overlay";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.nixpkgs-stable.follows = "nixpkgs-stable";
+    };
   };
 
   outputs =
@@ -62,6 +68,7 @@
                   overlays = [
                     inputs.jovian.overlays.default
                     inputs.chaotic.overlays.default
+                    inputs.emacs-overlay.overlays.package
                   ];
                 }
               else
@@ -71,6 +78,7 @@
                   overlays = [
                     inputs.darwin-emacs.overlays.default
                     inputs.chaotic.overlays.default
+                    inputs.emacs-overlay.overlays.package
                   ];
                 };
             pkgs' = import inputs.nixpkgs-staging {
@@ -85,6 +93,7 @@
                 inherit (pkgs) emacs-unstable emacs-30;
               })
               {
+                inherit (pkgs.emacsPackages) magit nix-mode agda2-mode;
                 #inherit (pkgs') remmina librewolf thunderbird-esr;
               }
               (lib.mkIf (pkgs.stdenv.isLinux) {
