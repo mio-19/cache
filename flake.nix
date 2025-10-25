@@ -65,6 +65,9 @@
               {
                 #inherit (pkgs') remmina librewolf thunderbird-esr;
               }
+              (lib.mkIf (pkgs.stdenv.isLinux) {
+                inherit (pkgs) totem;
+              })
               (lib.mkIf (system == "x86_64-linux") {
                 #linux_jovian = pkgs.linux_jovian;
                 default = (
