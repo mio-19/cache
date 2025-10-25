@@ -50,6 +50,7 @@
           let
             pkgs = import inputs.nixpkgs {
               inherit system;
+              config.allowUnfree = true;
               overlays = [
                 inputs.jovian.overlays.default
                 inputs.chaotic.overlays.default
@@ -57,6 +58,7 @@
             };
             pkgs' = import inputs.nixpkgs-staging {
               inherit system;
+              config.allowUnfree = true;
             };
             lib = inputs.nixpkgs.lib;
           in
@@ -69,8 +71,9 @@
                 inherit (pkgs) totem;
               })
               (lib.mkIf (system == "x86_64-linux") {
+                inherit (pkgs) davinci-resolve;
                 #linux_jovian = pkgs.linux_jovian;
-                default = (
+                /*default = (
                   pkgs.stdenv.mkDerivation rec {
                     name = "example-package-${version}";
                     version = "1.0";
@@ -80,7 +83,7 @@
                     buildPhase = "echo echo Hello World > example";
                     installPhase = "install -Dm755 example $out";
                   }
-                );
+                );*/
               })
             ];
           };
