@@ -23,7 +23,7 @@ jobs:
         cachixName:
           - mio-cache
         nixPath:
-          - nixpkgs=https://github.com/NixOS/nixpkgs/archive/refs/heads/nixos-unstable-small.tar.gz
+          - nixpkgs=https://github.com/NixOS/nixpkgs/archive/refs/heads/nixos-unstable.tar.gz
     runs-on: "${{ matrix.os }}"
     steps:
     - name: Maximize build space
