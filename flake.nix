@@ -86,12 +86,18 @@
               config.allowUnfree = true;
             };
             lib = inputs.nixpkgs.lib;
+            epkgs = pkgs.emacsPackagesFor pkgs.emacs-unstable;
           in
           {
             packages = lib.mkMerge [
               (lib.mkIf (pkgs.stdenv.isDarwin) {
                 inherit (pkgs) emacs-unstable emacs-30;
-                inherit (pkgs') remmina librewolf thunderbird-esr telegram-desktop materialgram;
+                emacs-with-pack = epkgs.emacsWithPackages [
+                  epkgs.nix-mode
+                  epkgs.magit
+                  epkgs.agda2-mode
+                ];
+                #inherit (pkgs') remmina librewolf thunderbird-esr telegram-desktop materialgram;
               })
               {
                 inherit (pkgs.emacsPackages) magit nix-mode agda2-mode;
