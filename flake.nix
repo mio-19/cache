@@ -97,7 +97,13 @@
                   epkgs.magit
                   epkgs.agda2-mode
                 ];
-                inherit (pkgs') remmina librewolf thunderbird-esr telegram-desktop materialgram;
+                inherit (pkgs')
+                  remmina
+                  librewolf
+                  thunderbird-esr
+                  telegram-desktop
+                  materialgram
+                  ;
               })
               {
                 inherit (pkgs.emacsPackages) magit nix-mode agda2-mode;
