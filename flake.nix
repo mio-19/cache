@@ -91,10 +91,10 @@
             packages = lib.mkMerge [
               (lib.mkIf (pkgs.stdenv.isDarwin) {
                 inherit (pkgs) emacs-unstable emacs-30;
+                inherit (pkgs') remmina librewolf thunderbird-esr telegram-desktop materialgram;
               })
               {
                 inherit (pkgs.emacsPackages) magit nix-mode agda2-mode;
-                #inherit (pkgs') remmina librewolf thunderbird-esr;
               }
               (lib.mkIf (pkgs.stdenv.isLinux) {
                 inherit (pkgs) totem gnome-session;
