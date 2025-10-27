@@ -1,7 +1,7 @@
 {
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    nixpkgs-staging.url = "github:NixOS/nixpkgs/staging";
+    #nixpkgs-staging.url = "github:NixOS/nixpkgs/staging";
     jovian = {
       url = "git+https://github.com/Jovian-Experiments/Jovian-NixOS.git";
       inputs.nixpkgs.follows = "nixpkgs";
