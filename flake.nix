@@ -6,7 +6,8 @@
       url = "git+https://github.com/Jovian-Experiments/Jovian-NixOS.git";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    nixpkgs-darwin.url = "github:NixOS/nixpkgs/2fbfb821ecd9b238477e64fb8bc3724112f4e7b3";
+    nixpkgs-darwin.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
+    #nixpkgs-darwin.url = "github:NixOS/nixpkgs/2fbfb821ecd9b238477e64fb8bc3724112f4e7b3";
     darwin-emacs = {
       url = "github:nix-giant/nix-darwin-emacs";
       inputs.nixpkgs.follows = "nixpkgs-darwin";
@@ -97,15 +98,18 @@
                   epkgs.magit
                   epkgs.agda2-mode
                 ];
-                inherit (pkgs')
+                /*
+                  inherit (pkgs')
                   remmina
                   librewolf
                   thunderbird-esr
                   telegram-desktop
                   materialgram
                   ;
+                */
               })
               {
+                inherit (pkgs) sbcl;
                 inherit (pkgs.emacsPackages) magit nix-mode agda2-mode;
               }
               (lib.mkIf (pkgs.stdenv.isLinux) {
