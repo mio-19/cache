@@ -1,8 +1,7 @@
 name: "Build and populate cache"
 on:
   schedule:
-    # Run every hour
-    - cron: '33 * * * *'
+    - cron: '44 */6 * * *'
   pull_request:
   push:
     branches:
