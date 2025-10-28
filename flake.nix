@@ -109,7 +109,7 @@
                 */
               })
               {
-                inherit (pkgs) sbcl;
+                #inherit (pkgs) sbcl;
                 inherit (pkgs.emacsPackages) magit nix-mode agda2-mode;
               }
               (lib.mkIf (pkgs.stdenv.isLinux) {
