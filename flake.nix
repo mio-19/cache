@@ -6,8 +6,8 @@
       url = "git+https://github.com/Jovian-Experiments/Jovian-NixOS.git";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    nixpkgs-darwin.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
-    #nixpkgs-darwin.url = "github:NixOS/nixpkgs/2fbfb821ecd9b238477e64fb8bc3724112f4e7b3";
+    #nixpkgs-darwin.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
+    nixpkgs-darwin.url = "github:NixOS/nixpkgs/master";
     darwin-emacs = {
       url = "github:nix-giant/nix-darwin-emacs";
       inputs.nixpkgs.follows = "nixpkgs-darwin";
