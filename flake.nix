@@ -6,8 +6,8 @@
       url = "git+https://github.com/Jovian-Experiments/Jovian-NixOS.git";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    #nixpkgs-darwin.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
-    nixpkgs-darwin.url = "github:NixOS/nixpkgs/master";
+    nixpkgs-darwin.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
+    #nixpkgs-darwin.url = "github:NixOS/nixpkgs/master";
     darwin-emacs = {
       url = "github:nix-giant/nix-darwin-emacs";
       inputs.nixpkgs.follows = "nixpkgs-darwin";
@@ -109,6 +109,7 @@
                 */
               })
               {
+                inherit (pkgs) musescore;
                 #inherit (pkgs) sbcl;
                 inherit (pkgs.emacsPackages) magit nix-mode agda2-mode;
               }
