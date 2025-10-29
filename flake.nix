@@ -3,10 +3,6 @@
     #nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable-small";
     #nixpkgs-staging.url = "github:NixOS/nixpkgs/staging";
-    jovian = {
-      url = "git+https://github.com/Jovian-Experiments/Jovian-NixOS.git";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     nixpkgs-darwin.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
     #nixpkgs-darwin.url = "github:NixOS/nixpkgs/master";
     darwin-emacs = {
@@ -14,6 +10,7 @@
       inputs.nixpkgs.follows = "nixpkgs-darwin";
     };
     chaotic.url = "git+https://github.com/chaotic-cx/nyx.git?ref=nyxpkgs-unstable";
+    jovian.follows = "chaotic/jovian";
     rosetta-spice.url = "github:zhaofengli/rosetta-spice";
     nixos-apple-silicon = {
       url = "github:nix-community/nixos-apple-silicon";
@@ -110,20 +107,38 @@
                 */
               })
               {
-                inherit (pkgs) musescore audacity inkscape folks;
+                inherit (pkgs)
+                  musescore
+                  audacity
+                  inkscape
+                  folks
+                  ;
                 #inherit (pkgs) sbcl;
                 inherit (pkgs.emacs.pkgs) magit nix-mode agda2-mode;
               }
               (lib.mkIf (pkgs.stdenv.isLinux) {
-                inherit (pkgs) totem gnome-session obsidian gamescope gnome-calendar;
+                inherit (pkgs)
+                  totem
+                  gnome-session
+                  obsidian
+                  gamescope
+                  gnome-calendar
+                  ;
               })
               (lib.mkIf (system == "x86_64-linux") {
-                inherit (pkgs) davinci-resolve steam lutris prusa-slicer;
+                inherit (pkgs.jovian-chaotic) mesa-radeonsi-jupiter;
+                inherit (pkgs)
+                  davinci-resolve
+                  steam
+                  lutris
+                  prusa-slicer
+                  ;
                 linuxv3gcc = (pkgs.linuxPackages_cachyos-gcc.cachyOverride { mArch = "GENERIC_V3"; }).kernel;
                 #linuxv4gcc = (pkgs.linuxPackages_cachyos-gcc.cachyOverride { mArch = "GENERIC_V4"; }).kernel;
                 linuxv3 = (pkgs.linuxPackages_cachyos-lto.cachyOverride { mArch = "GENERIC_V3"; }).kernel;
                 #linuxv4 = (pkgs.linuxPackages_cachyos-lto.cachyOverride { mArch = "GENERIC_V4"; }).kernel;
-                linuxv3gcczfscachyos = (pkgs.linuxPackages_cachyos-gcc.cachyOverride { mArch = "GENERIC_V3"; }).zfs_cachyos;
+                linuxv3gcczfscachyos =
+                  (pkgs.linuxPackages_cachyos-gcc.cachyOverride { mArch = "GENERIC_V3"; }).zfs_cachyos;
                 #linux_jovian = pkgs.linux_jovian;
                 /*
                   default = (
