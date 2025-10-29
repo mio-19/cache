@@ -2,7 +2,7 @@
   inputs = {
     #nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable-small";
-    #nixpkgs-staging.url = "github:NixOS/nixpkgs/staging";
+    nixpkgs-staging.url = "github:NixOS/nixpkgs/staging";
     nixpkgs-darwin.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
     #nixpkgs-darwin.url = "github:NixOS/nixpkgs/master";
     darwin-emacs = {
@@ -96,6 +96,7 @@
                   epkgs.magit
                   epkgs.agda2-mode
                 ];
+                inherit (pkgs') sbcl;
                 /*
                   inherit (pkgs')
                   remmina
