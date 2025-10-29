@@ -110,7 +110,7 @@
                 */
               })
               {
-                inherit (pkgs) musescore prusa-slicer;
+                inherit (pkgs) musescore prusa-slicer audacity inkscape;
                 #inherit (pkgs) sbcl;
                 inherit (pkgs.emacsPackages) magit nix-mode agda2-mode;
               }
