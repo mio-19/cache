@@ -115,7 +115,7 @@
                 inherit (pkgs.emacs.pkgs) magit nix-mode agda2-mode;
               }
               (lib.mkIf (pkgs.stdenv.isLinux) {
-                inherit (pkgs) totem gnome-session obsidian;
+                inherit (pkgs) totem gnome-session obsidian gamescope;
               })
               (lib.mkIf (system == "x86_64-linux") {
                 inherit (pkgs) davinci-resolve steam prusa-slicer;
