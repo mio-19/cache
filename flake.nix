@@ -115,7 +115,7 @@
                 inherit (pkgs.emacsPackages) magit nix-mode agda2-mode;
               }
               (lib.mkIf (pkgs.stdenv.isLinux) {
-                inherit (pkgs) totem gnome-session;
+                inherit (pkgs) totem gnome-session obsidian;
               })
               (lib.mkIf (system == "x86_64-linux") {
                 inherit (pkgs) davinci-resolve steam;
