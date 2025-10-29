@@ -112,7 +112,7 @@
               {
                 inherit (pkgs) musescore prusa-slicer audacity inkscape;
                 #inherit (pkgs) sbcl;
-                inherit (pkgs.emacsPackages) magit nix-mode agda2-mode;
+                inherit (pkgs.emacs.pkgs) magit nix-mode agda2-mode;
               }
               (lib.mkIf (pkgs.stdenv.isLinux) {
                 inherit (pkgs) totem gnome-session obsidian;
