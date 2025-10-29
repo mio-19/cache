@@ -112,7 +112,6 @@
                   musescore
                   audacity
                   inkscape
-                  folks
                   ;
                 #inherit (pkgs) sbcl;
                 inherit (pkgs.emacs.pkgs) magit nix-mode agda2-mode;
