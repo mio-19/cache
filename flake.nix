@@ -110,7 +110,7 @@
                 */
               })
               {
-                inherit (pkgs) musescore prusa-slicer audacity inkscape;
+                inherit (pkgs) musescore audacity inkscape;
                 #inherit (pkgs) sbcl;
                 inherit (pkgs.emacs.pkgs) magit nix-mode agda2-mode;
               }
@@ -118,7 +118,7 @@
                 inherit (pkgs) totem gnome-session obsidian;
               })
               (lib.mkIf (system == "x86_64-linux") {
-                inherit (pkgs) davinci-resolve steam;
+                inherit (pkgs) davinci-resolve steam prusa-slicer;
                 linuxv3gcc = (pkgs.linuxPackages_cachyos-gcc.cachyOverride { mArch = "GENERIC_V3"; }).kernel;
                 #linuxv4gcc = (pkgs.linuxPackages_cachyos-gcc.cachyOverride { mArch = "GENERIC_V4"; }).kernel;
                 linuxv3 = (pkgs.linuxPackages_cachyos-lto.cachyOverride { mArch = "GENERIC_V3"; }).kernel;
