@@ -126,9 +126,9 @@
                   ;
               })
               (lib.mkIf (system == "x86_64-linux") {
-                inherit (pkgs.jovian-chaotic) mesa-radeonsi-jupiter;
+                inherit (pkgs.jovian-chaotic) mesa-radeonsi-jupiter mesa-radv-jupiter;
                 inherit (pkgs)
-                  davinci-resolve
+                  #davinci-resolve
                   steam
                   lutris
                   prusa-slicer
