@@ -6,7 +6,7 @@
     nixpkgs-darwin.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
     #nixpkgs-darwin.url = "github:NixOS/nixpkgs/master";
     darwin-emacs = {
-      url = "github:nix-giant/nix-darwin-emacs/476ddf2a5d67188ef6f24e181a70b93da8da6828"; # unstable broken since 96b94326e010361d45802580f1c02ba5518db424
+      url = "github:nix-giant/nix-darwin-emacs";
       inputs.nixpkgs.follows = "nixpkgs-darwin";
     };
     chaotic.url = "git+https://github.com/chaotic-cx/nyx.git?ref=nyxpkgs-unstable";
