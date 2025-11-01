@@ -10,7 +10,11 @@
       inputs.nixpkgs.follows = "nixpkgs-darwin";
     };
     chaotic.url = "git+https://github.com/chaotic-cx/nyx.git?ref=nyxpkgs-unstable";
-    jovian.follows = "chaotic/jovian";
+    #jovian.follows = "chaotic/jovian";
+    jovian = {
+      url = "git+https://github.com/Jovian-Experiments/Jovian-NixOS.git";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     rosetta-spice.url = "github:zhaofengli/rosetta-spice";
     nixos-apple-silicon = {
       url = "github:nix-community/nixos-apple-silicon";
