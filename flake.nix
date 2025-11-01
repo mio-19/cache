@@ -100,7 +100,7 @@
                   epkgs.magit
                   epkgs.agda2-mode
                 ];
-                inherit (pkgs') sbcl;
+                inherit (pkgs) sbcl;
                 /*
                   inherit (pkgs')
                   remmina
