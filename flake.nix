@@ -73,6 +73,9 @@
                     inputs.chaotic.overlays.default
                     inputs.emacs-overlay.overlays.package
                   ];
+                  config.permittedInsecurePackages = [
+                    "qtwebengine-5.15.19"
+                  ];
                 }
               else
                 import inputs.nixpkgs-darwin {
@@ -83,10 +86,16 @@
                     inputs.chaotic.overlays.default
                     inputs.emacs-overlay.overlays.package
                   ];
+                  config.permittedInsecurePackages = [
+                    "qtwebengine-5.15.19"
+                  ];
                 };
             pkgs' = import inputs.nixpkgs-staging {
               inherit system;
               config.allowUnfree = true;
+              config.permittedInsecurePackages = [
+                "qtwebengine-5.15.19"
+              ];
             };
             lib = inputs.nixpkgs.lib;
             epkgs = pkgs.emacsPackagesFor pkgs.emacs-unstable;
@@ -117,7 +126,7 @@
                   audacity
                   inkscape
                   ;
-                #inherit (pkgs) sbcl;
+                inherit (pkgs) jellyfin-media-player;
                 inherit (pkgs.emacs.pkgs) magit nix-mode agda2-mode;
               }
               (lib.mkIf (pkgs.stdenv.isLinux) {
