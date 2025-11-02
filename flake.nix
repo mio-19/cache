@@ -126,7 +126,7 @@
                   audacity
                   inkscape
                   ;
-                inherit (pkgs) jellyfin-media-player;
+                inherit (pkgs) jellyfin-media-player thunderbird-esr;
                 inherit (pkgs.emacs.pkgs) magit nix-mode agda2-mode;
               }
               (lib.mkIf (pkgs.stdenv.isLinux) {
