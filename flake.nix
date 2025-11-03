@@ -138,7 +138,7 @@
                   gnome-calendar
                   ;
               })
-              (lib.mkIf (system == "x86_64-linux") {
+              (lib.mkIf (system == "x86_64-linux") rec {
                 inherit (pkgs.jovian-chaotic) mesa-radeonsi-jupiter mesa-radv-jupiter; # steamos-manager;
                 mesa-radeonsi-jupiteri686 = pkgs.pkgsi686Linux.mesa-radeonsi-jupiter;
                 mesa-radv-jupiteri686 = pkgs.pkgsi686Linux.mesa-radv-jupiter;
@@ -153,8 +153,9 @@
                 #linuxv4gcc = (pkgs.linuxPackages_cachyos-gcc.cachyOverride { mArch = "GENERIC_V4"; }).kernel;
                 linuxv3 = (pkgs.linuxPackages_cachyos-lto.cachyOverride { mArch = "GENERIC_V3"; }).kernel;
                 #linuxv4 = (pkgs.linuxPackages_cachyos-lto.cachyOverride { mArch = "GENERIC_V4"; }).kernel;
-                linuxv3gcczfscachyos =
-                  (pkgs.linuxPackages_cachyos-gcc.cachyOverride { mArch = "GENERIC_V3"; }).zfs_cachyos;
+                linuxv3gcczfscachyos = linuxv3gcc.zfs_cachyos;
+                linuxv3gccnvidiaopen = linuxv3gcc.nvidia-open;
+                linuxv3gccnxone = linuxv3gcc.xone;
                 linux_jovian = pkgs.linux_jovian;
                 /*
                   default = (
