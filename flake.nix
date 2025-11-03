@@ -126,7 +126,7 @@
                   audacity
                   inkscape
                   ;
-                inherit (pkgs) thunderbird-esr; # jellyfin-media-player 
+                inherit (pkgs) thunderbird-esr; # jellyfin-media-player
                 inherit (pkgs.emacs.pkgs) magit nix-mode agda2-mode;
               }
               (lib.mkIf (pkgs.stdenv.isLinux) {
@@ -139,7 +139,7 @@
                   ;
               })
               (lib.mkIf (system == "x86_64-linux") {
-                inherit (pkgs.jovian-chaotic) mesa-radeonsi-jupiter mesa-radv-jupiter steamos-manager;
+                inherit (pkgs.jovian-chaotic) mesa-radeonsi-jupiter mesa-radv-jupiter; # steamos-manager;
                 mesa-radeonsi-jupiteri686 = pkgs.pkgsi686Linux.mesa-radeonsi-jupiter;
                 mesa-radv-jupiteri686 = pkgs.pkgsi686Linux.mesa-radv-jupiter;
                 gamescopewsii686 = pkgs.pkgsi686Linux.gamescope-wsi;
