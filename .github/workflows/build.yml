@@ -21,6 +21,10 @@ jobs:
           - mio-cache
         nixPath:
           - nixpkgs=https://github.com/NixOS/nixpkgs/archive/refs/heads/nixos-unstable.tar.gz
+        nixpkgs-override:
+          - "--override-input nixpkgs nixpkgs/nixos-unstable"
+          - "--override-input nixpkgs nixpkgs/nixos-unstable-small"
+          - "--override-input nixpkgs nixpkgs/master"
     runs-on: "${{ matrix.os }}"
     steps:
     - name: Maximize build space
@@ -60,4 +64,4 @@ jobs:
       run: |
         nix run nixpkgs#nix-fast-build -- --max-jobs 1 \
           --no-nom --skip-cached \
-          -f .#packages
+          -f .#packages ${{ matrix.nixpkgs-override }}
