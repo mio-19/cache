@@ -128,6 +128,7 @@
                   musescore
                   audacity
                   inkscape
+                  noto-fonts-color-emoji
                   ;
                 #inherit (pkgs) thunderbird-esr; # jellyfin-media-player
                 inherit (pkgs.emacs.pkgs) magit nix-mode agda2-mode;
