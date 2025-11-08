@@ -154,6 +154,7 @@
                   prusa-slicer
                   android-studio
                   joplin-desktop
+                  gg
                   ;
                 linuxv3gcc = (pkgs.linuxPackages_cachyos-gcc.cachyOverride { mArch = "GENERIC_V3"; }).kernel;
                 #linuxv4gcc = (pkgs.linuxPackages_cachyos-gcc.cachyOverride { mArch = "GENERIC_V4"; }).kernel;
