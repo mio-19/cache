@@ -75,6 +75,7 @@
                   ];
                   config.permittedInsecurePackages = [
                     "qtwebengine-5.15.19"
+                    "electron-36.9.5" # for joplin
                   ];
                 }
               else
@@ -88,6 +89,7 @@
                   ];
                   config.permittedInsecurePackages = [
                     "qtwebengine-5.15.19"
+                    "electron-36.9.5" # for joplin
                   ];
                 };
             pkgs' = import inputs.nixpkgs-staging {
@@ -95,6 +97,7 @@
               config.allowUnfree = true;
               config.permittedInsecurePackages = [
                 "qtwebengine-5.15.19"
+                "electron-36.9.5" # for joplin
               ];
             };
             lib = inputs.nixpkgs.lib;
@@ -150,6 +153,7 @@
                   lutris
                   prusa-slicer
                   android-studio
+                  joplin-desktop
                   ;
                 linuxv3gcc = (pkgs.linuxPackages_cachyos-gcc.cachyOverride { mArch = "GENERIC_V3"; }).kernel;
                 #linuxv4gcc = (pkgs.linuxPackages_cachyos-gcc.cachyOverride { mArch = "GENERIC_V4"; }).kernel;
