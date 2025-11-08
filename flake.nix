@@ -139,7 +139,7 @@
                   ;
               })
               (lib.mkIf (system == "x86_64-linux") rec {
-                inherit (pkgs.pkgsi686) curl;
+                inherit (pkgs.pkgsi686Linux) curl;
                 inherit (pkgs.jovian-chaotic) mesa-radeonsi-jupiter mesa-radv-jupiter gamescope-session; # steamos-manager;
                 mesa-radeonsi-jupiteri686 = pkgs.pkgsi686Linux.mesa-radeonsi-jupiter;
                 mesa-radv-jupiteri686 = pkgs.pkgsi686Linux.mesa-radv-jupiter;
