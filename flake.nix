@@ -75,6 +75,7 @@
                   ];
                   config.permittedInsecurePackages = [
                     "qtwebengine-5.15.19"
+                    "electron-36.9.5" # for joplin
                   ];
                 }
               else
@@ -88,6 +89,7 @@
                   ];
                   config.permittedInsecurePackages = [
                     "qtwebengine-5.15.19"
+                    "electron-36.9.5" # for joplin
                   ];
                 };
             pkgs' = import inputs.nixpkgs-staging {
@@ -95,6 +97,7 @@
               config.allowUnfree = true;
               config.permittedInsecurePackages = [
                 "qtwebengine-5.15.19"
+                "electron-36.9.5" # for joplin
               ];
             };
             lib = inputs.nixpkgs.lib;
@@ -125,6 +128,7 @@
                   musescore
                   audacity
                   inkscape
+                  noto-fonts-color-emoji
                   ;
                 #inherit (pkgs) thunderbird-esr; # jellyfin-media-player
                 inherit (pkgs.emacs.pkgs) magit nix-mode agda2-mode;
@@ -140,7 +144,7 @@
               })
               (lib.mkIf (system == "x86_64-linux") rec {
                 inherit (pkgs.pkgsi686Linux) curl mangohud;
-                inherit (pkgs.jovian-chaotic) mesa-radeonsi-jupiter mesa-radv-jupiter gamescope-session; # steamos-manager;
+                inherit (pkgs.jovian-chaotic) mesa-radeonsi-jupiter mesa-radv-jupiter; # gamescope-session; # steamos-manager;
                 mesa-radeonsi-jupiteri686 = pkgs.pkgsi686Linux.mesa-radeonsi-jupiter;
                 mesa-radv-jupiteri686 = pkgs.pkgsi686Linux.mesa-radv-jupiter;
                 gamescopewsii686 = pkgs.pkgsi686Linux.gamescope-wsi;
@@ -150,6 +154,8 @@
                   lutris
                   prusa-slicer
                   android-studio
+                  joplin-desktop
+                  #gg
                   ;
                 linuxv3gcc = (pkgs.linuxPackages_cachyos-gcc.cachyOverride { mArch = "GENERIC_V3"; }).kernel;
                 #linuxv4gcc = (pkgs.linuxPackages_cachyos-gcc.cachyOverride { mArch = "GENERIC_V4"; }).kernel;
