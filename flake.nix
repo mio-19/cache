@@ -103,7 +103,7 @@
           {
             packages = lib.mkMerge [
               (lib.mkIf (pkgs.stdenv.isDarwin) {
-                inherit (pkgs) emacs-unstable emacs-30;
+                inherit (pkgs) emacs-unstable emacs-30 firefox_nightly;
                 emacs-with-pack = epkgs.emacsWithPackages [
                   epkgs.nix-mode
                   epkgs.magit
