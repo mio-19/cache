@@ -76,6 +76,7 @@
                   config.permittedInsecurePackages = [
                     "qtwebengine-5.15.19"
                     "electron-36.9.5" # for joplin
+                    "jitsi-meet-1.0.8792" # for element-desktop
                   ];
                 }
               else
@@ -106,7 +107,7 @@
           {
             packages = lib.mkMerge [
               (lib.mkIf (pkgs.stdenv.isDarwin) {
-                inherit (pkgs) emacs-unstable emacs-30 firefox_nightly;
+                inherit (pkgs) emacs-unstable emacs-30 firefox_nightly element-desktop joplin-desktop;
                 emacs-with-pack = epkgs.emacsWithPackages [
                   epkgs.nix-mode
                   epkgs.magit
