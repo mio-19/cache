@@ -63,5 +63,5 @@ jobs:
     - name: Build nix packages
       run: |
         nix run nixpkgs#nix-fast-build -- --max-jobs 1 \
-          --no-nom --skip-cached \
+          --no-nom --skip-cached --cores 0 --keep-going \
           -f .#packages ${{ matrix.nixpkgs-override }}
