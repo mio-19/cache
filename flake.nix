@@ -75,7 +75,7 @@
                   ];
                   config.permittedInsecurePackages = [
                     "qtwebengine-5.15.19"
-                    "electron-36.9.5" # for joplin
+                    "electron-36.9.5" # for joplin-desktop
                     "jitsi-meet-1.0.8792" # for element-desktop
                   ];
                 }
@@ -90,7 +90,7 @@
                   ];
                   config.permittedInsecurePackages = [
                     "qtwebengine-5.15.19"
-                    "electron-36.9.5" # for joplin
+                    "electron-36.9.5" # for joplin-desktop
                   ];
                 };
             pkgs' = import inputs.nixpkgs-staging {
@@ -98,7 +98,7 @@
               config.allowUnfree = true;
               config.permittedInsecurePackages = [
                 "qtwebengine-5.15.19"
-                "electron-36.9.5" # for joplin
+                "electron-36.9.5" # for joplin-desktop
               ];
             };
             lib = inputs.nixpkgs.lib;
@@ -107,7 +107,7 @@
           {
             packages = lib.mkMerge [
               (lib.mkIf (pkgs.stdenv.isDarwin) {
-                inherit (pkgs) emacs-unstable emacs-30 firefox_nightly element-desktop joplin-desktop;
+                inherit (pkgs) emacs-unstable emacs-30 firefox_nightly element-desktop;
                 emacs-with-pack = epkgs.emacsWithPackages [
                   epkgs.nix-mode
                   epkgs.magit
@@ -130,6 +130,7 @@
                   audacity
                   inkscape
                   noto-fonts-color-emoji
+                  joplin-desktop
                   ;
                 #inherit (pkgs) thunderbird-esr; # jellyfin-media-player
                 inherit (pkgs.emacs.pkgs) magit nix-mode agda2-mode;
@@ -155,7 +156,6 @@
                   lutris
                   prusa-slicer
                   android-studio
-                  joplin-desktop
                   #gg
                   ;
                 linuxv3gcc = (pkgs.linuxPackages_cachyos-gcc.cachyOverride { mArch = "GENERIC_V3"; }).kernel;
