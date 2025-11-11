@@ -77,6 +77,7 @@
                     "qtwebengine-5.15.19"
                     "electron-36.9.5" # for joplin-desktop
                     "jitsi-meet-1.0.8792" # for element-desktop
+                    "jitsi-meet-1.0.8792" # for element-desktop - see https://github.com/NixOS/nixpkgs/pull/426541
                   ];
                 }
               else
@@ -91,6 +92,7 @@
                   config.permittedInsecurePackages = [
                     "qtwebengine-5.15.19"
                     "electron-36.9.5" # for joplin-desktop
+                    "jitsi-meet-1.0.8792" # for element-desktop - see https://github.com/NixOS/nixpkgs/pull/426541
                   ];
                 };
             pkgs' = import inputs.nixpkgs-staging {
@@ -99,6 +101,7 @@
               config.permittedInsecurePackages = [
                 "qtwebengine-5.15.19"
                 "electron-36.9.5" # for joplin-desktop
+                "jitsi-meet-1.0.8792" # for element-desktop - see https://github.com/NixOS/nixpkgs/pull/426541
               ];
             };
             lib = inputs.nixpkgs.lib;
@@ -107,7 +110,12 @@
           {
             packages = lib.mkMerge [
               (lib.mkIf (pkgs.stdenv.isDarwin) {
-                inherit (pkgs) emacs-unstable emacs-30 firefox_nightly element-desktop;
+                inherit (pkgs)
+                  emacs-unstable
+                  emacs-30
+                  firefox_nightly
+                  element-desktop
+                  ;
                 emacs-with-pack = epkgs.emacsWithPackages [
                   epkgs.nix-mode
                   epkgs.magit
