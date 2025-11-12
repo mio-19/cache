@@ -115,22 +115,16 @@
                   emacs-30
                   firefox_nightly
                   element-desktop
+                  remmina
+                  librewolf
+                  thunderbird-esr
+                  sbcl
                   ;
                 emacs-with-pack = epkgs.emacsWithPackages [
                   epkgs.nix-mode
                   epkgs.magit
                   epkgs.agda2-mode
                 ];
-                inherit (pkgs) sbcl;
-                /*
-                  inherit (pkgs')
-                  remmina
-                  librewolf
-                  thunderbird-esr
-                  telegram-desktop
-                  materialgram
-                  ;
-                */
               })
               {
                 inherit (pkgs)
