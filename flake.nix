@@ -146,6 +146,7 @@
                   gnome-calendar
                   chromium
                   aseprite
+                  tailscale
                   ;
               })
               (lib.mkIf (system == "x86_64-linux") rec {
