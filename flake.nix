@@ -3,8 +3,8 @@
     #nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable-small";
     nixpkgs-staging.url = "github:NixOS/nixpkgs/staging";
-    #nixpkgs-darwin.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
-    nixpkgs-darwin.url = "github:NixOS/nixpkgs/master";
+    nixpkgs-darwin.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
+    #nixpkgs-darwin.url = "github:NixOS/nixpkgs/master";
     darwin-emacs = {
       url = "github:nix-giant/nix-darwin-emacs";
       inputs.nixpkgs.follows = "nixpkgs-darwin";
@@ -132,6 +132,7 @@
                   inkscape
                   noto-fonts-color-emoji
                   joplin-desktop
+                  firefox-esr
                   ;
                 #inherit (pkgs) thunderbird-esr; # jellyfin-media-player
                 inherit (pkgs.emacs.pkgs) magit nix-mode agda2-mode;
