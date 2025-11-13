@@ -145,6 +145,7 @@
                   gamescope
                   gnome-calendar
                   chromium
+                  aseprite
                   ;
               })
               (lib.mkIf (system == "x86_64-linux") rec {
