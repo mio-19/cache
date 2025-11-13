@@ -143,6 +143,7 @@
                   obsidian
                   gamescope
                   gnome-calendar
+                  chromium
                   ;
               })
               (lib.mkIf (system == "x86_64-linux") rec {
