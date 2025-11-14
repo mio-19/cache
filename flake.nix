@@ -3,11 +3,9 @@
     #nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable-small";
     nixpkgs-staging.url = "github:NixOS/nixpkgs/staging";
-    #nixpkgs-darwin.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
-    nixpkgs-darwin.url = "github:NixOS/nixpkgs/master";
     darwin-emacs = {
       url = "github:nix-giant/nix-darwin-emacs";
-      inputs.nixpkgs.follows = "nixpkgs-darwin";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
     chaotic.url = "git+https://github.com/chaotic-cx/nyx.git?ref=nyxpkgs-unstable";
     #jovian.follows = "chaotic/jovian";
@@ -63,37 +61,29 @@
             ...
           }:
           let
-            pkgs =
-              if (args.pkgs.stdenv.isLinux) then
-                import inputs.nixpkgs {
-                  inherit system;
-                  config.allowUnfree = true;
-                  overlays = [
+            pkgs = import inputs.nixpkgs {
+              inherit system;
+              config.allowUnfree = true;
+              overlays = (
+                if (args.pkgs.stdenv.isLinux) then
+                  [
                     inputs.jovian.overlays.default
                     inputs.chaotic.overlays.default
                     inputs.emacs-overlay.overlays.package
-                  ];
-                  config.permittedInsecurePackages = [
-                    "qtwebengine-5.15.19"
-                    "electron-36.9.5" # for joplin-desktop
-                    "jitsi-meet-1.0.8792" # for element-desktop - see https://github.com/NixOS/nixpkgs/pull/426541
-                  ];
-                }
-              else
-                import inputs.nixpkgs-darwin {
-                  inherit system;
-                  config.allowUnfree = true;
-                  overlays = [
+                  ]
+                else
+                  [
                     inputs.darwin-emacs.overlays.default
                     inputs.chaotic.overlays.default
                     inputs.emacs-overlay.overlays.package
-                  ];
-                  config.permittedInsecurePackages = [
-                    "qtwebengine-5.15.19"
-                    "electron-36.9.5" # for joplin-desktop
-                    "jitsi-meet-1.0.8792" # for element-desktop - see https://github.com/NixOS/nixpkgs/pull/426541
-                  ];
-                };
+                  ]
+              );
+              config.permittedInsecurePackages = [
+                "qtwebengine-5.15.19"
+                "electron-36.9.5" # for joplin-desktop
+                "jitsi-meet-1.0.8792" # for element-desktop - see https://github.com/NixOS/nixpkgs/pull/426541
+              ];
+            };
             pkgs' = import inputs.nixpkgs-staging {
               inherit system;
               config.allowUnfree = true;
