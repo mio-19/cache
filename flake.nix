@@ -3,8 +3,13 @@
     #nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable-small";
     nixpkgs-staging.url = "github:NixOS/nixpkgs/staging";
-    nixpkgs-darwin.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
-    #nixpkgs-darwin.url = "github:NixOS/nixpkgs/master";
+    #nixpkgs-darwin.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
+    nixpkgs-darwin.url = "github:NixOS/nixpkgs/master";
+    nix-darwin = {
+      # https://github.com/nix-darwin/nix-darwin/pull/1636
+      url = "github:qowoz/nix-darwin/applications";
+      inputs.nixpkgs.follows = "nixpkgs-darwin";
+    };
     darwin-emacs = {
       url = "github:nix-giant/nix-darwin-emacs";
       inputs.nixpkgs.follows = "nixpkgs-darwin";
