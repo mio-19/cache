@@ -27,7 +27,7 @@
       "inputs": {
         "flake-utils": "flake-utils",
         "nixpkgs": [
-          "nixpkgs-darwin"
+          "nixpkgs"
         ]
       },
       "locked": {
@@ -333,22 +333,6 @@
         "type": "github"
       }
     },
-    "nixpkgs-darwin": {
-      "locked": {
-        "lastModified": 1763102960,
-        "narHash": "sha256-K1o9GNVP5VCE/HuqRI1TpntRuntWuoHf4pEI/1iFhRw=",
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "e60cb3d5a67753b1ccabcc5e6f4a54370fc8927b",
-        "type": "github"
-      },
-      "original": {
-        "owner": "NixOS",
-        "ref": "master",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
     "nixpkgs-lib": {
       "locked": {
         "lastModified": 1761765539,
@@ -458,7 +442,6 @@
         "jovian": "jovian_2",
         "nixos-apple-silicon": "nixos-apple-silicon",
         "nixpkgs": "nixpkgs_2",
-        "nixpkgs-darwin": "nixpkgs-darwin",
         "nixpkgs-stable": "nixpkgs-stable",
         "nixpkgs-staging": "nixpkgs-staging",
         "nur": "nur",
