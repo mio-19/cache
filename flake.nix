@@ -132,7 +132,6 @@
                   inkscape
                   noto-fonts-color-emoji
                   joplin-desktop
-                  firefox-esr
                   zed-editor
                   ;
                 #inherit (pkgs) thunderbird-esr; # jellyfin-media-player
