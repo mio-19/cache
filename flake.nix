@@ -65,7 +65,7 @@
               inherit system;
               config.allowUnfree = true;
               overlays = (
-                if (args.pkgs.stdenv.isLinux) then
+                if (lib.hasSuffix "-linux" system) then
                   [
                     inputs.jovian.overlays.default
                     inputs.chaotic.overlays.default
