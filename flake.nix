@@ -145,6 +145,7 @@
                 mesa-radeonsi-jupiteri686 = pkgs.pkgsi686Linux.mesa-radeonsi-jupiter;
                 mesa-radv-jupiteri686 = pkgs.pkgsi686Linux.mesa-radv-jupiter;
                 gamescopewsii686 = pkgs.pkgsi686Linux.gamescope-wsi;
+                wine = pkgs.wineWowPackages.waylandFull;
                 inherit (pkgs)
                   davinci-resolve
                   steam
