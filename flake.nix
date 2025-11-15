@@ -151,6 +151,7 @@
                   lutris
                   prusa-slicer
                   android-studio
+                  ryubing
                   #gg
                   ;
                 linuxv3gcc = (pkgs.linuxPackages_cachyos-gcc.cachyOverride { mArch = "GENERIC_V3"; }).kernel;
