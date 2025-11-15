@@ -122,6 +122,7 @@
                   inkscape
                   noto-fonts-color-emoji
                   joplin-desktop
+                  famistudio
                   ;
                 #inherit (pkgs) thunderbird-esr; # jellyfin-media-player
                 inherit (pkgs.emacs.pkgs) magit nix-mode agda2-mode;
