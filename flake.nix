@@ -146,7 +146,7 @@
                 mesa-radv-jupiteri686 = pkgs.pkgsi686Linux.mesa-radv-jupiter;
                 gamescopewsii686 = pkgs.pkgsi686Linux.gamescope-wsi;
                 inherit (pkgs)
-                  #davinci-resolve
+                  davinci-resolve
                   steam
                   lutris
                   prusa-slicer
