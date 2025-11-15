@@ -22,10 +22,10 @@ jobs:
         nixPath:
           - nixpkgs=https://github.com/NixOS/nixpkgs/archive/refs/heads/nixos-unstable.tar.gz
         nixpkgs-override:
+          - "--override-input nixpkgs nixpkgs/master"
           - "--override-input nixpkgs nixpkgs/nixos-unstable"
           - "--override-input nixpkgs nixpkgs/nixpkgs-unstable"
           - "--override-input nixpkgs nixpkgs/nixos-unstable-small"
-          - "--override-input nixpkgs nixpkgs/master"
           - "--override-input nixpkgs nixpkgs/staging-next"
     runs-on: "${{ matrix.os }}"
     steps:
