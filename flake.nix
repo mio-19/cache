@@ -2,7 +2,8 @@
   inputs = {
     #nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     #nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable-small";
-    nixpkgs.url = "github:NixOS/nixpkgs/master";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
+    #nixpkgs.url = "github:NixOS/nixpkgs/master";
     nixpkgs-staging.url = "github:NixOS/nixpkgs/staging";
     darwin-emacs = {
       url = "github:nix-giant/nix-darwin-emacs";
