@@ -126,6 +126,7 @@
                   joplin-desktop
                   famistudio
                   starship
+                  nix
                   ;
                 #inherit (pkgs) thunderbird-esr; # jellyfin-media-player
                 inherit (pkgs.emacs.pkgs) magit nix-mode agda2-mode;
