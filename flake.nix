@@ -145,6 +145,7 @@
                   aseprite
                   tailscale
                   ;
+                inherit (pkgs.kdePackages) kwin;
               })
               (lib.mkIf (system == "x86_64-linux") rec {
                 inherit (pkgs.pkgsi686Linux) curl mangohud;
