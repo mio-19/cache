@@ -145,7 +145,7 @@
                   aseprite
                   tailscale
                   ;
-                inherit (pkgs.kdePackages) kwin;
+                inherit (pkgs.kdePackages) kwin kdeplasma-addons;
               })
               (lib.mkIf (system == "x86_64-linux") rec {
                 inherit (pkgs.pkgsi686Linux) curl mangohud;
