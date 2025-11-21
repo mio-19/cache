@@ -9,11 +9,11 @@
         "rust-overlay": "rust-overlay"
       },
       "locked": {
-        "lastModified": 1763563060,
-        "narHash": "sha256-WoNrCTrsiONytvw31fvaRzwc9RcqqHv/LUyYyYflgIg=",
+        "lastModified": 1763732117,
+        "narHash": "sha256-/zBu6slgHtkuFZFJ4ReKS3NO6rdwEv4KcaYADkz6KyA=",
         "ref": "nyxpkgs-unstable",
-        "rev": "c5bfa8ed2037abd4ca213b363065cb6f76155035",
-        "revCount": 2453,
+        "rev": "a34640558e83eb3ba0d52c52cb5ffd0465786e4b",
+        "revCount": 2456,
         "type": "git",
         "url": "https://github.com/chaotic-cx/nyx.git"
       },
@@ -382,11 +382,11 @@
     },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1763731572,
-        "narHash": "sha256-ukwUSf4jp2/7cusjp/tPzMAsuKYZ5KZcBkUxMRjr1Us=",
+        "lastModified": 1763733442,
+        "narHash": "sha256-ENzttDxGJG0caOsVDJagZu4gBV/NupMw1UebzuHM7Vs=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "de6fea3eb0363bb722fdb5ac8017e8e52b221635",
+        "rev": "38f4a8328cecd45ca0fd9ed2c4830c3cc6207e44",
         "type": "github"
       },
       "original": {
@@ -420,11 +420,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1763727407,
-        "narHash": "sha256-AG67WDD5aFBESksMvqcr6tiaOVEU55IL21njmqT86wY=",
+        "lastModified": 1763732921,
+        "narHash": "sha256-y6LPXWeR6lmaUsTAKIDuKi/Mqz9oDvzU8RIlwZ0wdiI=",
         "owner": "nix-community",
         "repo": "NUR",
-        "rev": "a50d40aebffd6e8a6e14cdee9e78081ec373f803",
+        "rev": "45b8b305726ff285400fa933470e5cc8973a5cab",
         "type": "github"
       },
       "original": {
