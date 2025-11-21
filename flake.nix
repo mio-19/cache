@@ -96,7 +96,7 @@
               ];
             };
             lib = inputs.nixpkgs.lib;
-            epkgs = pkgs.emacsPackagesFor pkgs.emacs-unstable;
+            epkgs = pkgs.emacsPackagesFor pkgs.emacs-30;
           in
           {
             packages = lib.mkMerge [
