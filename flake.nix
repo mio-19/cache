@@ -186,6 +186,10 @@
                       linuxv4.kernel
                       linuxv3gcc.zfs_cachyos
                       linuxv3gcc.xone
+                      linuxv3gcc.vmware
+                      linuxv4gcc.zfs_cachyos
+                      linuxv4gcc.xone
+                      linuxv4gcc.vmware
                       linuxPackages_jovian.kernel
                       linuxPackages_jovian.${pkgs.zfs.kernelModuleAttribute}
                     ];
