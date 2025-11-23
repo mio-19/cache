@@ -31,6 +31,12 @@
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.nixpkgs-stable.follows = "nixpkgs-stable";
     };
+    razerdaemon = {
+      #url = "github:JosuGZ/razer-laptop-control";
+      url = "git+https://github.com/JosuGZ/razer-laptop-control.git";
+      inputs.nixpkgs.follows = "nixpkgs";
+      #inputs.flake-utils.follows = "flake-utils";
+    };
   };
 
   outputs =
@@ -149,6 +155,7 @@
                 inherit (pkgs.kdePackages) kwin kdeplasma-addons gwenview;
               })
               (lib.mkIf (system == "x86_64-linux") rec {
+                razer-laptop-control = inputs.razerdaemon.packages.x86_64-linux.default;
                 inherit (pkgs.pkgsi686Linux) curl mangohud;
                 inherit (pkgs.jovian-chaotic) mesa-radeonsi-jupiter mesa-radv-jupiter; # gamescope-session; # steamos-manager;
                 mesa-radeonsi-jupiteri686 = pkgs.pkgsi686Linux.mesa-radeonsi-jupiter;
