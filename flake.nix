@@ -175,27 +175,22 @@
                   ryubing
                   #gg
                   ;
-                linuxv3gcckernel = linuxv3gcc.kernel;
-                linuxv3gccnvidiaopen = linuxv3gcc.nvidia-open;
-                linuxv3gcczfscachyos = linuxv3gcc.zfs_cachyos;
-                linuxv3gccnxone = linuxv3gcc.xone;
-                linuxv4gcckernel = linuxv4gcc.kernel;
-                linuxv3kernel = linuxv3.kernel;
-                linuxv4kernel = linuxv4.kernel;
-                linux_jovian = pkgs.linux_jovian;
-                /*
-                  default = (
-                    pkgs.stdenv.mkDerivation rec {
-                      name = "example-package-${version}";
-                      version = "1.0";
-                      src = ./.;
-                      # cache dependencies for those packages:
-                      buildInputs = with pkgs; davinci-resolve.nativeBuildInputs;
-                      buildPhase = "echo echo Hello World > example";
-                      installPhase = "install -Dm755 example $out";
-                    }
-                  );
-                */
+                default = (
+                  pkgs.symlinkJoin {
+                    name = "default-linux-kernel-modules";
+                    # cache dependencies for those packages:
+                    paths = with pkgs; [
+                      linuxv3gcc.kernel
+                      linuxv4gcc.kernel
+                      linuxv3.kernel
+                      linuxv4.kernel
+                      linuxv3gcc.zfs_cachyos
+                      linuxv3gcc.xone
+                      linuxPackages_jovian.kernel
+                      linuxPackages_jovian.${pkgs.zfs.kernelModuleAttribute}
+                    ];
+                  }
+                );
               })
             ];
           };
