@@ -110,6 +110,7 @@
                   librewolf
                   thunderbird-esr
                   sbcl
+                  octaveFull
                   ;
                 emacs-with-pack = epkgs.emacsWithPackages [
                   epkgs.nix-mode
