@@ -103,10 +103,6 @@
             };
             lib = inputs.nixpkgs.lib;
             epkgs = pkgs.emacsPackagesFor pkgs.emacs-30;
-            linuxv3gcc = (pkgs.linuxPackages_cachyos-gcc.cachyOverride { mArch = "GENERIC_V3"; });
-            linuxv4gcc = (pkgs.linuxPackages_cachyos-gcc.cachyOverride { mArch = "GENERIC_V4"; });
-            linuxv3 = (pkgs.linuxPackages_cachyos-lto.cachyOverride { mArch = "GENERIC_V3"; });
-            linuxv4 = (pkgs.linuxPackages_cachyos-lto.cachyOverride { mArch = "GENERIC_V4"; });
           in
           {
             packages = lib.mkMerge [
@@ -179,20 +175,30 @@
                   pkgs.symlinkJoin {
                     name = "default-linux-kernel-modules";
                     # cache dependencies for those packages:
-                    paths = with pkgs; [
-                      linuxv3gcc.kernel
-                      linuxv4gcc.kernel
-                      linuxv3.kernel
-                      linuxv4.kernel
-                      linuxv3gcc.zfs_cachyos
-                      linuxv3gcc.xone
-                      linuxv3gcc.vmware
-                      linuxv4gcc.zfs_cachyos
-                      linuxv4gcc.xone
-                      linuxv4gcc.vmware
-                      linuxPackages_jovian.kernel
-                      linuxPackages_jovian.${pkgs.zfs.kernelModuleAttribute}
-                    ];
+                    paths =
+                      with pkgs;
+                      let
+                        linuxv3gcc = (pkgs.linuxPackages_cachyos-gcc.cachyOverride { mArch = "GENERIC_V3"; });
+                        linuxv4gcc = (pkgs.linuxPackages_cachyos-gcc.cachyOverride { mArch = "GENERIC_V4"; });
+                        linuxv3 = (pkgs.linuxPackages_cachyos-lto.cachyOverride { mArch = "GENERIC_V3"; });
+                        linuxv4 = (pkgs.linuxPackages_cachyos-lto.cachyOverride { mArch = "GENERIC_V4"; });
+                      in
+                      [
+                        linuxv3gcc.kernel
+                        linuxv4gcc.kernel
+                        linuxv3.kernel
+                        linuxv4.kernel
+                        linuxv3gcc.zfs_cachyos
+                        linuxv3gcc.xone
+                        linuxv3gcc.vmware
+                        linuxv3gcc.nvidiaPackages.stable
+                        linuxv4gcc.zfs_cachyos
+                        linuxv4gcc.xone
+                        linuxv4gcc.vmware
+                        linuxv4gcc.nvidiaPackages.stable
+                        linuxPackages_jovian.kernel
+                        linuxPackages_jovian.${pkgs.zfs.kernelModuleAttribute}
+                      ];
                   }
                 );
               })
