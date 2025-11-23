@@ -135,6 +135,7 @@
                   starship
                   nix
                   lean4
+                  tailscale
                   trayscale
                   zed-editor
                   qbittorrent-enhanced
@@ -152,9 +153,14 @@
                   gnome-calendar
                   chromium
                   aseprite
-                  tailscale
+                  wiliwili
                   ;
-                inherit (pkgs.kdePackages) kwin kdeplasma-addons gwenview fcitx5-with-addons;
+                inherit (pkgs.kdePackages)
+                  kwin
+                  kdeplasma-addons
+                  gwenview
+                  fcitx5-with-addons
+                  ;
               })
               (lib.mkIf (system == "x86_64-linux") {
                 razer-laptop-control = inputs.razerdaemon.packages.x86_64-linux.default;
