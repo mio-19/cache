@@ -102,7 +102,7 @@
             packages = lib.mkMerge [
               (lib.mkIf (pkgs.stdenv.isDarwin) {
                 inherit (pkgs)
-                  emacs-unstable
+                  #emacs-unstable
                   emacs-30
                   firefox_nightly
                   element-desktop
