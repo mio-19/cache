@@ -103,6 +103,10 @@
             };
             lib = inputs.nixpkgs.lib;
             epkgs = pkgs.emacsPackagesFor pkgs.emacs-30;
+            linuxv3gcc = (pkgs.linuxPackages_cachyos-gcc.cachyOverride { mArch = "GENERIC_V3"; });
+            linuxv4gcc = (pkgs.linuxPackages_cachyos-gcc.cachyOverride { mArch = "GENERIC_V4"; });
+            linuxv3 = (pkgs.linuxPackages_cachyos-lto.cachyOverride { mArch = "GENERIC_V3"; });
+            linuxv4 = (pkgs.linuxPackages_cachyos-lto.cachyOverride { mArch = "GENERIC_V4"; });
           in
           {
             packages = lib.mkMerge [
@@ -154,7 +158,7 @@
                   ;
                 inherit (pkgs.kdePackages) kwin kdeplasma-addons gwenview;
               })
-              (lib.mkIf (system == "x86_64-linux") rec {
+              (lib.mkIf (system == "x86_64-linux") {
                 razer-laptop-control = inputs.razerdaemon.packages.x86_64-linux.default;
                 inherit (pkgs.pkgsi686Linux) curl mangohud;
                 inherit (pkgs.jovian-chaotic) mesa-radeonsi-jupiter mesa-radv-jupiter; # gamescope-session; # steamos-manager;
@@ -171,13 +175,13 @@
                   ryubing
                   #gg
                   ;
-                linuxv3gcc = (pkgs.linuxPackages_cachyos-gcc.cachyOverride { mArch = "GENERIC_V3"; }).kernel;
-                linuxv4gcc = (pkgs.linuxPackages_cachyos-gcc.cachyOverride { mArch = "GENERIC_V4"; }).kernel;
-                linuxv3 = (pkgs.linuxPackages_cachyos-lto.cachyOverride { mArch = "GENERIC_V3"; }).kernel;
-                linuxv4 = (pkgs.linuxPackages_cachyos-lto.cachyOverride { mArch = "GENERIC_V4"; }).kernel;
-                #linuxv3gcczfscachyos = linuxv3gcc.zfs_cachyos;
-                #linuxv3gccnvidiaopen = linuxv3gcc.nvidia-open;
-                #linuxv3gccnxone = linuxv3gcc.xone;
+                linuxv3gcckernel = linuxv3gcc.kernel;
+                linuxv3gccnvidiaopen = linuxv3gcc.nvidia-open;
+                linuxv3gcczfscachyos = linuxv3gcc.zfs_cachyos;
+                linuxv3gccnxone = linuxv3gcc.xone;
+                linuxv4gcckernel = linuxv4gcc.kernel;
+                linuxv3kernel = linuxv3.kernel;
+                linuxv4kernel = linuxv4.kernel;
                 linux_jovian = pkgs.linux_jovian;
                 /*
                   default = (
