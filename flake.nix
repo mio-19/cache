@@ -171,7 +171,7 @@
                   prusa-slicer
                   android-studio
                   ryubing
-                  #gg
+                  gg
                   ;
                 default = (
                   pkgs.symlinkJoin {
