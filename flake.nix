@@ -154,7 +154,7 @@
                   aseprite
                   tailscale
                   ;
-                inherit (pkgs.kdePackages) kwin kdeplasma-addons gwenview;
+                inherit (pkgs.kdePackages) kwin kdeplasma-addons gwenview fcitx5-with-addons;
               })
               (lib.mkIf (system == "x86_64-linux") {
                 razer-laptop-control = inputs.razerdaemon.packages.x86_64-linux.default;
