@@ -137,6 +137,8 @@
                   lean4
                   trayscale
                   zed-editor
+                  qbittorrent-enhanced
+                  moonlight-qt
                   ;
                 #inherit (pkgs) thunderbird-esr; # jellyfin-media-player
                 inherit (pkgs.emacs.pkgs) magit nix-mode agda2-mode;
