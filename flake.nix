@@ -205,22 +205,32 @@
                       let
                         linuxv3gcc = (pkgs.linuxPackages_cachyos-gcc.cachyOverride { mArch = "GENERIC_V3"; });
                         linuxv4gcc = (pkgs.linuxPackages_cachyos-gcc.cachyOverride { mArch = "GENERIC_V4"; });
+                        linuxzen4gcc = (pkgs.linuxPackages_cachyos-gcc.cachyOverride { mArch = "ZEN4"; });
                         linuxv3 = (pkgs.linuxPackages_cachyos-lto.cachyOverride { mArch = "GENERIC_V3"; });
                         linuxv4 = (pkgs.linuxPackages_cachyos-lto.cachyOverride { mArch = "GENERIC_V4"; });
+                        linuxzen4 = (pkgs.linuxPackages_cachyos-lto.cachyOverride { mArch = "ZEN4"; });
                       in
                       [
                         linuxv3gcc.kernel
-                        linuxv4gcc.kernel
-                        linuxv3.kernel
-                        linuxv4.kernel
                         linuxv3gcc.zfs_cachyos
                         linuxv3gcc.xone
                         linuxv3gcc.vmware
                         linuxv3gcc.nvidiaPackages.stable
+                        linuxv4gcc.kernel
                         linuxv4gcc.zfs_cachyos
                         linuxv4gcc.xone
                         linuxv4gcc.vmware
                         linuxv4gcc.nvidiaPackages.stable
+                        linuxzen4gcc.kernel
+                        linuxzen4gcc.zfs_cachyos
+                        linuxzen4gcc.xone
+                        linuxzen4gcc.vmware
+                        linuxzen4gcc.nvidiaPackages.stable
+                        linuxv3.kernel
+                        linuxv4.kernel
+                        linuxzen4.kernel
+                        linuxzen4.zfs_cachyos
+                        linuxzen4.nvidiaPackages.stable
                         linuxPackages_jovian.kernel
                         linuxPackages_jovian.${pkgs.zfs.kernelModuleAttribute}
                       ];
