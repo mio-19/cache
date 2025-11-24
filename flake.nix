@@ -166,6 +166,7 @@
                   kdeplasma-addons
                   gwenview
                   fcitx5-with-addons
+                  plasma-workspace
                   ;
               })
               (lib.mkIf (system == "x86_64-linux") {
