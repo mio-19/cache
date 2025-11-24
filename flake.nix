@@ -135,8 +135,11 @@
                   starship
                   nix
                   lean4
+                  tailscale
                   trayscale
                   zed-editor
+                  qbittorrent-enhanced
+                  moonlight-qt
                   ;
                 #inherit (pkgs) thunderbird-esr; # jellyfin-media-player
                 inherit (pkgs.emacs.pkgs) magit nix-mode agda2-mode;
@@ -150,9 +153,14 @@
                   gnome-calendar
                   chromium
                   aseprite
-                  tailscale
+                  wiliwili
                   ;
-                inherit (pkgs.kdePackages) kwin kdeplasma-addons gwenview;
+                inherit (pkgs.kdePackages)
+                  kwin
+                  kdeplasma-addons
+                  gwenview
+                  fcitx5-with-addons
+                  ;
               })
               (lib.mkIf (system == "x86_64-linux") {
                 razer-laptop-control = inputs.razerdaemon.packages.x86_64-linux.default;
@@ -170,7 +178,7 @@
                   prusa-slicer
                   android-studio
                   ryubing
-                  #gg
+                  gg
                   ;
                 default = (
                   pkgs.symlinkJoin {
