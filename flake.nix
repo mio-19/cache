@@ -125,22 +125,28 @@
                 ];
               })
               {
-                inherit (pkgs)
-                  musescore
-                  audacity
-                  inkscape
-                  noto-fonts-color-emoji
-                  joplin-desktop
-                  famistudio
-                  starship
-                  nix
-                  lean4
-                  tailscale
-                  trayscale
-                  zed-editor
-                  qbittorrent-enhanced
-                  moonlight-qt
-                  ;
+                universal = (
+                  pkgs.symlinkJoin {
+                    name = "universal";
+                    # cache dependencies for those packages:
+                    paths = with pkgs; [
+                      musescore
+                      audacity
+                      inkscape
+                      noto-fonts-color-emoji
+                      joplin-desktop
+                      famistudio
+                      starship
+                      nix
+                      lean4
+                      tailscale
+                      trayscale
+                      zed-editor
+                      qbittorrent-enhanced
+                      moonlight-qt
+                    ];
+                  }
+                );
                 #inherit (pkgs) thunderbird-esr; # jellyfin-media-player
                 inherit (pkgs.emacs.pkgs) magit nix-mode agda2-mode;
               }
