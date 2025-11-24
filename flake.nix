@@ -170,12 +170,22 @@
               })
               (lib.mkIf (system == "x86_64-linux") {
                 razer-laptop-control = inputs.razerdaemon.packages.x86_64-linux.default;
-                inherit (pkgs.pkgsi686Linux) curl mangohud;
                 inherit (pkgs.jovian-chaotic) mesa-radeonsi-jupiter mesa-radv-jupiter; # gamescope-session; # steamos-manager;
-                mesa-radeonsi-jupiteri686 = pkgs.pkgsi686Linux.mesa-radeonsi-jupiter;
-                mesa-radv-jupiteri686 = pkgs.pkgsi686Linux.mesa-radv-jupiter;
-                gamescopewsii686 = pkgs.pkgsi686Linux.gamescope-wsi;
-                qtwaylandi686 = pkgs.pkgsi686Linux.kdePackages.qtwayland;
+                i686s = (
+                  pkgs.symlinkJoin {
+                    name = "i686s";
+                    # cache dependencies for those packages:
+                    paths = with pkgs.pkgsi686Linux; [
+                      mesa-radeonsi-jupiter
+                      mesa-radv-jupiter
+                      gamescope-wsi
+                      kdePackages.qtwayland
+                      mesa
+                      curl
+                      mangohud
+                    ];
+                  }
+                );
                 wine = pkgs.wineWowPackages.waylandFull;
                 inherit (pkgs)
                   davinci-resolve
