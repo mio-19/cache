@@ -195,7 +195,7 @@
                   prusa-slicer
                   android-studio
                   ryubing
-                  #gg
+                  openrazer-daemon
                   ;
                 default = (
                   pkgs.symlinkJoin {
