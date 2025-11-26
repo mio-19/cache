@@ -141,7 +141,7 @@
                       lean4
                       tailscale
                       trayscale
-                      zed-editor
+                      #zed-editor # takes maybe more than 6h
                       qbittorrent-enhanced
                       moonlight-qt
                     ];
