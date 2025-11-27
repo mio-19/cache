@@ -459,17 +459,17 @@
         ]
       },
       "locked": {
-        "lastModified": 1756234256,
-        "narHash": "sha256-iL7qYOEEdDNcTiviXZ40oc+6beEuw4IO2mhYv8NOypA=",
+        "lastModified": 1764241888,
+        "narHash": "sha256-3nZhbD4sUKHZ/nMjfRp+vvV9Q4EPfR06shL9gf5LpsQ=",
         "ref": "refs/heads/main",
-        "rev": "be737196ee98578fb0221d08db927b550072a7bd",
-        "revCount": 493,
+        "rev": "1b8383bc37f880c3bbaf55e365e2e4148f392e76",
+        "revCount": 494,
         "type": "git",
-        "url": "https://github.com/JosuGZ/razer-laptop-control.git"
+        "url": "https://github.com/mio-19/razer-laptop-control.git"
       },
       "original": {
         "type": "git",
-        "url": "https://github.com/JosuGZ/razer-laptop-control.git"
+        "url": "https://github.com/mio-19/razer-laptop-control.git"
       }
     },
     "root": {
