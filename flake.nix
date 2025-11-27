@@ -197,9 +197,9 @@
                   ryubing
                   openrazer-daemon
                   ;
-                default = (
+                kernel2 = (
                   pkgs.symlinkJoin {
-                    name = "default-linux-kernel-modules";
+                    name = "kernel2-linux-kernel-modules";
                     # cache dependencies for those packages:
                     paths =
                       with pkgs;
@@ -217,6 +217,24 @@
                         linuxv3gcc.xone
                         linuxv3gcc.vmware
                         linuxv3gcc.nvidiaPackages.stable
+                      ];
+                  }
+                );
+                kernel1 = (
+                  pkgs.symlinkJoin {
+                    name = "default-linux-kernel-modules";
+                    # cache dependencies for those packages:
+                    paths =
+                      with pkgs;
+                      let
+                        linuxv3gcc = (pkgs.linuxPackages_cachyos-gcc.cachyOverride { mArch = "GENERIC_V3"; });
+                        linuxv4gcc = (pkgs.linuxPackages_cachyos-gcc.cachyOverride { mArch = "GENERIC_V4"; });
+                        linuxzen4gcc = (pkgs.linuxPackages_cachyos-gcc.cachyOverride { mArch = "ZEN4"; });
+                        linuxv3 = (pkgs.linuxPackages_cachyos-lto.cachyOverride { mArch = "GENERIC_V3"; });
+                        linuxv4 = (pkgs.linuxPackages_cachyos-lto.cachyOverride { mArch = "GENERIC_V4"; });
+                        linuxzen4 = (pkgs.linuxPackages_cachyos-lto.cachyOverride { mArch = "ZEN4"; });
+                      in
+                      [
                         /*
                           linuxv4gcc.kernel
                           linuxv4gcc.zfs_cachyos
