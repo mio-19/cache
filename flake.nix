@@ -171,7 +171,14 @@
               })
               (lib.mkIf (system == "x86_64-linux") {
                 razer-laptop-control = inputs.razerdaemon.packages.x86_64-linux.default;
-                inherit (pkgs.jovian-chaotic) mesa-radeonsi-jupiter mesa-radv-jupiter inputplumber; # gamescope-session; # steamos-manager;
+                inherit
+                  (
+                    pkgs # .jovian-chaotic
+                  )
+                  mesa-radeonsi-jupiter
+                  mesa-radv-jupiter
+                  inputplumber
+                  ; # gamescope-session; # steamos-manager;
                 i686s = (
                   pkgs.symlinkJoin {
                     name = "i686s";
