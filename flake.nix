@@ -151,16 +151,21 @@
                 inherit (pkgs.emacs.pkgs) magit nix-mode agda2-mode;
               }
               (lib.mkIf (pkgs.stdenv.isLinux) {
-                inherit (pkgs)
-                  totem
-                  gnome-session
-                  obsidian
-                  gamescope
-                  gnome-calendar
-                  chromium
-                  aseprite
-                  wiliwili
-                  ;
+                linuxpkgs = pkgs.symlinkJoin {
+                  name = "linuxpkgs";
+                  # cache dependencies for those packages:
+                  paths = with pkgs; [
+                    totem
+                    gnome-session
+                    obsidian
+                    gamescope
+                    gnome-calendar
+                    chromium
+                    aseprite
+                    wiliwili
+                    krdp
+                  ];
+                };
                 inherit (pkgs.kdePackages)
                   kwin
                   kdeplasma-addons
