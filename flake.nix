@@ -173,6 +173,7 @@
                   ;
               })
               (lib.mkIf (system == "x86_64-linux") {
+                inherit (pkgs.pkgsx86_64_v3) mpv;
                 razer-laptop-control = inputs.razerdaemon.packages.x86_64-linux.default;
                 inherit
                   (
