@@ -162,7 +162,7 @@
                   chromium
                   aseprite
                   wiliwili
-                  krdp
+                  #krdp
                   ;
                 inherit (pkgs.kdePackages)
                   kwin
