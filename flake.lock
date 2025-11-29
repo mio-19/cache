@@ -400,11 +400,11 @@
     },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1764389371,
-        "narHash": "sha256-Bq3kTfPl2q5pbJypVESXB1iYlcg35M7DWrmUS/aV27I=",
+        "lastModified": 1764393242,
+        "narHash": "sha256-ybKqzkca/UOTcA+oopx6rMsTrQUXmmeHczi44RMn/dU=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "7d9be7b1c63840e80f7518979518e89a596a0060",
+        "rev": "3a493b3e843c396f3ea2e802d6d50ecd552a0db6",
         "type": "github"
       },
       "original": {
@@ -438,11 +438,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1764389473,
-        "narHash": "sha256-bEmeLMniGbZ2bdyhz0k2+ax2+GbZGVbMzIwFPxx1On8=",
+        "lastModified": 1764390429,
+        "narHash": "sha256-kJnA+LBy2Jp02GAfB72pVI7Chv4RxIv8rkIMN2YGkHU=",
         "owner": "nix-community",
         "repo": "NUR",
-        "rev": "86115ab0138debd8ec2090e436d69d91a24df6f6",
+        "rev": "7be83702d4c25cfaaa65689cbdfacbdc8da82b3b",
         "type": "github"
       },
       "original": {
@@ -459,10 +459,10 @@
         ]
       },
       "locked": {
-        "lastModified": 1764331398,
-        "narHash": "sha256-4SIdn/qgemVtxHsRmf4ZkoGKnTTrYHapBQrW9hsT7Dc=",
+        "lastModified": 1764392166,
+        "narHash": "sha256-pJmAswGIWZ7allZaC2Vxx7fNXlppwH9W0aQvA+UBI8U=",
         "ref": "refs/heads/main",
-        "rev": "dff1739fba223b3fbcb2915ff9af254be0008611",
+        "rev": "991997c64e8bc6a7269af783b8a9c46539f0e61c",
         "revCount": 494,
         "type": "git",
         "url": "https://github.com/mio-19/razer-laptop-control.git"
