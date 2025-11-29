@@ -145,6 +145,7 @@
                       #zed-editor # takes maybe more than 6h
                       qbittorrent-enhanced
                       moonlight-qt
+                      uv
                     ];
                   }
                 );
