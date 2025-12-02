@@ -117,6 +117,7 @@
             packages = lib.mkMerge [
               (lib.mkIf (pkgs.stdenv.isDarwin) {
                 inherit (pkgs)
+                  zed-editor
                   #emacs-unstable
                   emacs-30
                   firefox_nightly
