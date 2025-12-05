@@ -155,6 +155,7 @@
                       qbittorrent-enhanced
                       moonlight-qt
                       uv
+                      nodejs
                     ];
                   }
                 );
