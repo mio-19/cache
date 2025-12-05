@@ -191,6 +191,7 @@
                   )
                   mesa-radeonsi-jupiter
                   mesa-radv-jupiter
+                  mesa
                   inputplumber
                   ; # gamescope-session; # steamos-manager;
                 i686s = (
