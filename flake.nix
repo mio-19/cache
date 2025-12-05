@@ -156,6 +156,7 @@
                       moonlight-qt
                       uv
                       nodejs
+                      nodejs_latest
                     ];
                   }
                 );
