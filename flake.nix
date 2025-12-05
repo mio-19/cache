@@ -192,7 +192,9 @@
                   )
                   mesa-radeonsi-jupiter
                   mesa-radv-jupiter
+                  mesa
                   inputplumber
+                  wireplumber
                   ; # gamescope-session; # steamos-manager;
                 i686s = (
                   pkgs.symlinkJoin {
