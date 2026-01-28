@@ -190,7 +190,6 @@
                 inherit (pkgs)
                   totem
                   gnome-session
-                  obsidian
                   gamescope
                   gnome-calendar
                   #chromium
