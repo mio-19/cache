@@ -144,11 +144,8 @@
                   #zed-editor
                   #emacs-unstable
                   emacs-30
-                  #firefox_nightly
                   element-desktop
                   remmina
-                  librewolf
-                  thunderbird-esr
                   sbcl
                   octaveFull
                   ;
@@ -188,7 +185,6 @@
                   }
                 );
                 chester = (inputs.chester.packages."${pkgs.stdenv.hostPlatform.system}".default);
-                #inherit (pkgs) thunderbird-esr; # jellyfin-media-player
                 inherit (pkgs.emacs.pkgs) magit nix-mode agda2-mode;
               }
               (lib.mkIf (pkgs.stdenv.isLinux) {
@@ -196,12 +192,9 @@
                   totem
                   gnome-session
                   obsidian
-                  gamescope
                   gnome-calendar
-                  #chromium
                   aseprite
                   wiliwili
-                  #krdp
                   freecad
                   plezy
                   ;
