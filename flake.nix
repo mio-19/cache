@@ -203,6 +203,7 @@
                   wiliwili
                   #krdp
                   freecad
+                  plezy
                   ;
                 inherit (pkgs.kdePackages)
                   kwin
