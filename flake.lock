@@ -13,11 +13,11 @@
         "rust-overlay": "rust-overlay"
       },
       "locked": {
-        "lastModified": 1771522302,
-        "narHash": "sha256-afYO7E6duSiSazQ6V3YCYDMZRluyzss9hbMO8LUH84Q=",
+        "lastModified": 1771591785,
+        "narHash": "sha256-Y4Yp9PLJr1FLDny7bvFo34QGyB0v2u5l90g0JYC8hw8=",
         "ref": "refs/heads/main",
-        "rev": "c816f0bd74833c80ac50c2240ccd93bd58444b67",
-        "revCount": 3512,
+        "rev": "44d51309ccea4ec1258fa17b684bd7212c2efaa3",
+        "revCount": 3513,
         "type": "git",
         "url": "https://github.com/lonerOrz/nyx-loner.git"
       },
@@ -359,11 +359,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1771440156,
-        "narHash": "sha256-IrznE3ZQ+tf6amuQW/zlVkA18LzknWK+Hbt6tdmNtnw=",
+        "lastModified": 1771587792,
+        "narHash": "sha256-XGFLdlLOez7f0rmjlF+1TLXyBguy8gx2aBHx/Q5JXxs=",
         "ref": "refs/heads/development",
-        "rev": "faf829408344456d53c33df0a99f2f307498c830",
-        "revCount": 1508,
+        "rev": "b49fc54950e251f166a2240799315033ab7a8916",
+        "revCount": 1509,
         "type": "git",
         "url": "https://github.com/Jovian-Experiments/Jovian-NixOS.git"
       },
@@ -508,11 +508,11 @@
     },
     "nixpkgs-staging": {
       "locked": {
-        "lastModified": 1771584109,
-        "narHash": "sha256-7+14KKp7/g8m+ML9SHyphR7W0K/91uAB5nXztGjeLDo=",
+        "lastModified": 1771591357,
+        "narHash": "sha256-oRXYqSPS/sUqhUELsFeUqvsVO840hnBtD3AxhOMSfsQ=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "ce26550a646c184e13895d17412dd9287c2db47b",
+        "rev": "9928132cbde4d96ec7e77c9c9c6ed2825b22ed2f",
         "type": "github"
       },
       "original": {
@@ -524,11 +524,11 @@
     },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1771585218,
-        "narHash": "sha256-oSL/Ce6LLtz9uhi97QCCF9Ru6m6XcLYSUjKpGpJO89U=",
+        "lastModified": 1771592072,
+        "narHash": "sha256-xk3xU/5Lk7Rz99fo3TUJhXrd0jX134GEBhZfHrEdkMc=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "53787889a311213bee32da18f0687ab3ba60af25",
+        "rev": "60caf3d526ad1b3d5f4cb5154ece3aef10c6a004",
         "type": "github"
       },
       "original": {
@@ -562,11 +562,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1771581385,
-        "narHash": "sha256-Yu5ehDh4rtd3Ow6VyXEEuQ40DzD14oe0R8kXFUtIGBs=",
+        "lastModified": 1771591985,
+        "narHash": "sha256-P6H4eUwUgOQ/Qlxxlm9yPsev7iERgrbEJOQJ5ULn2fY=",
         "owner": "nix-community",
         "repo": "NUR",
-        "rev": "5bdc2edf13c2dbbbb7d4ce9228fc01cdb5254ed2",
+        "rev": "73113dd19e0f71a6064c077fb9c9dccdf6384376",
         "type": "github"
       },
       "original": {
