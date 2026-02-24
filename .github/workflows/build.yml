@@ -89,6 +89,6 @@ jobs:
     # add timeout less than github hard timeout so there is time to upload cache.
     - name: Build nix packages
       run: |
-        timeout --foreground 4h nix run nixpkgs#nix-fast-build -- --max-jobs 1 \
+        timeout --foreground 5h nix run nixpkgs#nix-fast-build -- --max-jobs 1 \
           --no-nom \
           -f .#packages.${{ env.SYSTEM }} ${{ matrix.nixpkgs-override }}
