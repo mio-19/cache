@@ -195,7 +195,7 @@
                   gnome-calendar
                   aseprite
                   wiliwili
-                  freecad
+                  #freecad
                   plezy
                   ;
                 inherit (pkgs.kdePackages)
@@ -289,7 +289,7 @@
                       zeroad
                       #vdrift
                       opencv
-                      freecad
+                      #freecad
                     ];
                   }
                 );
