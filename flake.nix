@@ -339,10 +339,11 @@
                           linuxv3gcc.vmware
                           linuxv3gcc.nvidiaPackages.stable.open
                         */
-                        linuxv3.kernel
+                        #linuxv3.kernel
                       ];
                   }
                 );
+                linuxv3_kernel = (pkgs.linuxPackages_cachyos-lto.cachyOverride { mArch = "GENERIC_V3"; }).kernel;
                 kernel1 = (
                   pkgs.symlinkJoin {
                     name = "default-linux-kernel-modules";
