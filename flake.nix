@@ -344,6 +344,18 @@
                   }
                 );
                 linuxv3_kernel = (pkgs.linuxPackages_cachyos-lto.cachyOverride { mArch = "GENERIC_V3"; }).kernel;
+                kerneljovian = (
+                  pkgs.symlinkJoin {
+                    name = "default-linux-kernel-modules";
+
+                    paths =
+                      with pkgs;
+                      [
+                        linuxPackages_jovian.kernel
+                        linuxPackages_jovian.${pkgs.zfs.kernelModuleAttribute}
+                      ];
+                  }
+                );
                 kernel1 = (
                   pkgs.symlinkJoin {
                     name = "default-linux-kernel-modules";
@@ -377,8 +389,6 @@
                           linuxzen4gcc.vmware
                           linuxzen4gcc.nvidiaPackages.stable.open
                         */
-                        linuxPackages_jovian.kernel
-                        linuxPackages_jovian.${pkgs.zfs.kernelModuleAttribute}
                       ];
                   }
                 );
