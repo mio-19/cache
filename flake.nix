@@ -209,26 +209,29 @@
               (lib.mkIf (system == "x86_64-linux") {
                 wine64_package = inputs.nix-gaming.packages.${pkgs.stdenv.hostPlatform.system}.wine-tkg;
                 #comfyuinvidia = inputs.nixified-ai.packages."${pkgs.stdenv.hostPlatform.system}".comfyui-nvidia;
-                v3ssss = (
-                  pkgs.symlinkJoin {
-                    name = "v3ssss";
+                /*
+                  # build failed
+                  v3ssss = (
+                    pkgs.symlinkJoin {
+                      name = "v3ssss";
 
-                    paths = with pkgs.pkgsx86_64_v3; [
-                      nix
-                      systemd
-                      tmux
-                      nano
-                      bluez
-                      dbus
-                      networkmanager
-                      polkit
-                      power-profiles-daemon
-                      openssh
-                      plymouth
-                      iwd
-                    ];
-                  }
-                );
+                      paths = with pkgs.pkgsx86_64_v3; [
+                        nix
+                        systemd
+                        tmux
+                        nano
+                        bluez
+                        dbus
+                        networkmanager
+                        polkit
+                        power-profiles-daemon
+                        openssh
+                        plymouth
+                        iwd
+                      ];
+                    }
+                  );
+                */
                 v3sssscuda = (
                   pkgs.symlinkJoin {
                     name = "v3sssscuda";
@@ -348,12 +351,10 @@
                   pkgs.symlinkJoin {
                     name = "default-linux-kernel-modules";
 
-                    paths =
-                      with pkgs;
-                      [
-                        linuxPackages_jovian.kernel
-                        linuxPackages_jovian.${pkgs.zfs.kernelModuleAttribute}
-                      ];
+                    paths = with pkgs; [
+                      linuxPackages_jovian.kernel
+                      linuxPackages_jovian.${pkgs.zfs.kernelModuleAttribute}
+                    ];
                   }
                 );
                 kernel1 = (
