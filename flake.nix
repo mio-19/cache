@@ -53,6 +53,10 @@
       url = "git+https://codeberg.org/chester-lang/chester.git";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nix-gaming = {
+      url = "github:fufexan/nix-gaming";
+      inputs.flake-parts.follows = "nur/flake-parts";
+    };
   };
 
   outputs =
@@ -140,11 +144,8 @@
                   #zed-editor
                   #emacs-unstable
                   emacs-30
-                  #firefox_nightly
                   element-desktop
                   remmina
-                  librewolf
-                  thunderbird-esr
                   sbcl
                   octaveFull
                   ;
@@ -159,7 +160,7 @@
                 universal = (
                   pkgs.symlinkJoin {
                     name = "universal";
-                    
+
                     paths = with pkgs; [
                       musescore
                       audacity
@@ -179,11 +180,11 @@
                       nodejs
                       nodejs_latest
                       p7zip-rar
+                      fresh-editor
                     ];
                   }
                 );
                 chester = (inputs.chester.packages."${pkgs.stdenv.hostPlatform.system}".default);
-                #inherit (pkgs) thunderbird-esr; # jellyfin-media-player
                 inherit (pkgs.emacs.pkgs) magit nix-mode agda2-mode;
               }
               (lib.mkIf (pkgs.stdenv.isLinux) {
@@ -191,12 +192,12 @@
                   totem
                   gnome-session
                   gamescope
+                  obsidian
                   gnome-calendar
-                  #chromium
                   aseprite
                   wiliwili
-                  #krdp
-                  freecad
+                  #freecad
+                  plezy
                   ;
                 inherit (pkgs.kdePackages)
                   kwin
@@ -207,32 +208,35 @@
                   ;
               })
               (lib.mkIf (system == "x86_64-linux") {
-                inherit (pkgs-cuda) opencv;
+                wine64_package = inputs.nix-gaming.packages.${pkgs.stdenv.hostPlatform.system}.wine-tkg;
                 #comfyuinvidia = inputs.nixified-ai.packages."${pkgs.stdenv.hostPlatform.system}".comfyui-nvidia;
-                v3ssss = (
-                  pkgs.symlinkJoin {
-                    name = "v3ssss";
-                    
-                    paths = with pkgs.pkgsx86_64_v3; [
-                      nix
-                      systemd
-                      tmux
-                      nano
-                      bluez
-                      dbus
-                      networkmanager
-                      polkit
-                      power-profiles-daemon
-                      openssh
-                      plymouth
-                      iwd
-                    ];
-                  }
-                );
+                /*
+                  # build failed
+                  v3ssss = (
+                    pkgs.symlinkJoin {
+                      name = "v3ssss";
+
+                      paths = with pkgs.pkgsx86_64_v3; [
+                        nix
+                        systemd
+                        tmux
+                        nano
+                        bluez
+                        dbus
+                        networkmanager
+                        polkit
+                        power-profiles-daemon
+                        openssh
+                        plymouth
+                        iwd
+                      ];
+                    }
+                  );
+                */
                 v3sssscuda = (
                   pkgs.symlinkJoin {
                     name = "v3sssscuda";
-                    
+
                     paths = with pkgs-cuda.pkgsx86_64_v3; [
                       nix
                       systemd
@@ -246,7 +250,6 @@
                       openssh
                       plymouth
                       iwd
-                      freecad
                     ];
                   }
                 );
@@ -264,7 +267,7 @@
                 i686s = (
                   pkgs.symlinkJoin {
                     name = "i686s";
-                    
+
                     paths = with pkgs.pkgsi686Linux; [
                       mesa-radeonsi-jupiter
                       mesa-radv-jupiter
@@ -279,7 +282,7 @@
                 packagesssscuda = (
                   pkgs.symlinkJoin {
                     name = "packagesssscuda";
-                    
+
                     paths = with pkgs-cuda; [
                       davinci-resolve
                       retroarch-full
@@ -289,13 +292,15 @@
                       pixelorama
                       zeroad
                       #vdrift
+                      opencv
+                      #freecad
                     ];
                   }
                 );
                 packagessss = (
                   pkgs.symlinkJoin {
                     name = "packagessss";
-                    
+
                     paths = with pkgs; [
                       gitbutler
                       #davinci-resolve
@@ -312,14 +317,14 @@
                       wineWowPackages.waylandFull
                       krita
                       pixelorama
-                      flightgear 
+                      flightgear
                     ];
                   }
                 );
                 kernel2 = (
                   pkgs.symlinkJoin {
                     name = "kernel2-linux-kernel-modules";
-                    
+
                     paths =
                       with pkgs;
                       let
@@ -338,14 +343,25 @@
                           linuxv3gcc.vmware
                           linuxv3gcc.nvidiaPackages.stable.open
                         */
-                        linuxv3.kernel
+                        #linuxv3.kernel
                       ];
+                  }
+                );
+                linuxv3_kernel = (pkgs.linuxPackages_cachyos-lto.cachyOverride { mArch = "GENERIC_V3"; }).kernel;
+                kerneljovian = (
+                  pkgs.symlinkJoin {
+                    name = "default-linux-kernel-modules";
+
+                    paths = with pkgs; [
+                      linuxPackages_jovian.kernel
+                      linuxPackages_jovian.${pkgs.zfs.kernelModuleAttribute}
+                    ];
                   }
                 );
                 kernel1 = (
                   pkgs.symlinkJoin {
                     name = "default-linux-kernel-modules";
-                    
+
                     paths =
                       with pkgs;
                       let
@@ -375,8 +391,6 @@
                           linuxzen4gcc.vmware
                           linuxzen4gcc.nvidiaPackages.stable.open
                         */
-                        linuxPackages_jovian.kernel
-                        linuxPackages_jovian.${pkgs.zfs.kernelModuleAttribute}
                       ];
                   }
                 );
