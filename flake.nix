@@ -358,6 +358,22 @@
                     ];
                   }
                 );
+                kernelzen4lts = (
+                  pkgs.symlinkJoin {
+                    name = "default-linux-kernel-modules-zen4lts";
+
+                    paths =
+                      with pkgs;
+                      let
+                        linuxzen4lts = (pkgs.linuxPackages_cachyos-lts.cachyOverride { mArch = "ZEN4"; });
+                      in
+                      [
+                        linuxzen4lts.kernel
+                        linuxzen4lts.zfs_cachyos
+                        linuxzen4lts.nvidiaPackages.stable.open
+                      ];
+                  }
+                );
                 kernel1 = (
                   pkgs.symlinkJoin {
                     name = "default-linux-kernel-modules";
