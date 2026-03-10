@@ -57,6 +57,14 @@
       url = "github:fufexan/nix-gaming";
       inputs.flake-parts.follows = "nur/flake-parts";
     };
+    nix-openclaw = {
+      url = "github:openclaw/nix-openclaw";
+      inputs.nixpkgs.follows = "nixpkgs";
+      #inputs.home-manager.follows = "home-manager";
+      inputs.home-manager.inputs.nixpkgs.follows = "nixpkgs";
+      #inputs.flake-utils.follows = "flake-utils";
+      inputs.nix-steipete-tools.inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -98,12 +106,14 @@
                     inputs.jovian.overlays.default
                     inputs.chaotic.overlays.default
                     #inputs.emacs-overlay.overlays.package
+                    inputs.nix-openclaw.overlays.default
                   ]
                 else
                   [
                     inputs.darwin-emacs.overlays.default
                     inputs.chaotic.overlays.default
                     #inputs.emacs-overlay.overlays.package
+                    inputs.nix-openclaw.overlays.default
                   ]
               );
               config.permittedInsecurePackages = [
@@ -162,6 +172,7 @@
                     name = "universal";
 
                     paths = with pkgs; [
+                      openclaw
                       musescore
                       audacity
                       inkscape
