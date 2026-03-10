@@ -252,26 +252,28 @@
                     }
                   );
                 */
-                v3sssscuda = (
-                  pkgs.symlinkJoin {
-                    name = "v3sssscuda";
+                /*
+                  v3sssscuda = (
+                    pkgs.symlinkJoin {
+                      name = "v3sssscuda";
 
-                    paths = with pkgs-cuda.pkgsx86_64_v3; [
-                      nix
-                      systemd
-                      tmux
-                      nano
-                      dbus
-                      bluez
-                      networkmanager
-                      polkit
-                      power-profiles-daemon
-                      openssh
-                      plymouth
-                      iwd
-                    ];
-                  }
-                );
+                      paths = with pkgs-cuda.pkgsx86_64_v3; [
+                        nix
+                        systemd
+                        tmux
+                        nano
+                        dbus
+                        bluez
+                        networkmanager
+                        polkit
+                        power-profiles-daemon
+                        openssh
+                        plymouth
+                        iwd
+                      ];
+                    }
+                  );
+                */
                 razer-laptop-control = inputs.razerdaemon.packages.x86_64-linux.default;
                 inherit
                   (
@@ -345,7 +347,6 @@
                     name = "kernel2-linux-kernel-modules";
 
                     paths =
-                      with pkgs;
                       let
                         linuxv3gcc = (pkgs.linuxPackages_cachyos-gcc.cachyOverride { mArch = "GENERIC_V3"; });
                         linuxv4gcc = (pkgs.linuxPackages_cachyos-gcc.cachyOverride { mArch = "GENERIC_V4"; });
@@ -382,7 +383,6 @@
                     name = "default-linux-kernel-modules-zen4lts";
 
                     paths =
-                      with pkgs;
                       let
                         linuxzen4lts = (pkgs.linuxPackages_cachyos-lts.cachyOverride { mArch = "ZEN4"; });
                       in
@@ -398,7 +398,6 @@
                     name = "default-linux-kernel-modules";
 
                     paths =
-                      with pkgs;
                       let
                         linuxzen4 = (pkgs.linuxPackages_cachyos-lto.cachyOverride { mArch = "ZEN4"; });
                       in
