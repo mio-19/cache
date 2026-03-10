@@ -393,24 +393,22 @@
                       ];
                   }
                 );
-                /*
-                  kernel1 = (
-                    pkgs.symlinkJoin {
-                      name = "default-linux-kernel-modules";
+                kernel1 = (
+                  pkgs.symlinkJoin {
+                    name = "default-linux-kernel-modules";
 
-                      paths =
-                        with pkgs;
-                        let
-                          linuxzen4 = (pkgs.linuxPackages_cachyos-lto.cachyOverride { mArch = "ZEN4"; });
-                        in
-                        [
-                          linuxzen4.kernel
-                          linuxzen4.zfs_cachyos
-                          linuxzen4.nvidiaPackages.stable.open
-                        ];
-                    }
-                  );
-                */
+                    paths =
+                      with pkgs;
+                      let
+                        linuxzen4 = (pkgs.linuxPackages_cachyos-lto.cachyOverride { mArch = "ZEN4"; });
+                      in
+                      [
+                        linuxzen4.kernel
+                        linuxzen4.zfs_cachyos
+                        linuxzen4.nvidiaPackages.stable.open
+                      ];
+                  }
+                );
               })
             ];
           };
