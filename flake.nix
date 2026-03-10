@@ -167,6 +167,14 @@
                 #lix_stable = pkgs.lixPackageSets.stable.lix;
               })
               {
+                /*
+                  # https://github.com/openclaw/nix-openclaw/blob/a29d1420c2a4c33bc7dfd96f5716f3b9b528820f/nix/modules/home-manager/openclaw/lib.nix#L20
+                  clawplugins =
+                    let
+                      toolOverrides = {};
+                    in
+                    (pkgs.openclawPackages.withTools toolOverrides).openclaw;
+                */
                 universal = (
                   pkgs.symlinkJoin {
                     name = "universal";
