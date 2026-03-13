@@ -135,9 +135,9 @@
               inherit system;
               config.allowUnfree = true;
               config.cudaSupport = true;
-              overlays = ([
+              overlays = [
                 inputs.chaotic.overlays.default
-              ]);
+              ];
             };
             lib = inputs.nixpkgs.lib;
             epkgs = pkgs.emacsPackagesFor pkgs.emacs-30;
@@ -348,7 +348,7 @@
 
                     paths =
                       let
-                        linuxv3gcc = (pkgs.linuxPackages_cachyos-gcc.cachyOverride { mArch = "GENERIC_V3"; });
+                        linuxv3gcc = (pkgs-cuda.linuxPackages_cachyos-gcc.cachyOverride { mArch = "GENERIC_V3"; });
                         linuxv4gcc = (pkgs.linuxPackages_cachyos-gcc.cachyOverride { mArch = "GENERIC_V4"; });
                         linuxzen4gcc = (pkgs.linuxPackages_cachyos-gcc.cachyOverride { mArch = "ZEN4"; });
                         linuxv3 = (pkgs.linuxPackages_cachyos-lto.cachyOverride { mArch = "GENERIC_V3"; });
