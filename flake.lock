@@ -17,11 +17,12 @@
         "narHash": "sha256-8v21ORcTt5HpyEc1GN9rjHUBCTuRag9G98KXMyF6gxE=",
         "ref": "refs/heads/main",
         "rev": "7b8c415e8c579a0fb1622a22d4ab409a9f90cb0d",
-        "revCount": 3896,
+        "shallow": true,
         "type": "git",
         "url": "https://github.com/lonerOrz/nyx-loner.git"
       },
       "original": {
+        "shallow": true,
         "type": "git",
         "url": "https://github.com/lonerOrz/nyx-loner.git"
       }
