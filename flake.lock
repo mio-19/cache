@@ -58,11 +58,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1773633090,
-        "narHash": "sha256-LiFFSzLm600vtTPyOmshGrYe+blbwC8Ix3nnr50RQD0=",
+        "lastModified": 1773718222,
+        "narHash": "sha256-p058UScAQtpjHaYm5lcCEwMOjnh7a3hZJZNpHAz9gZU=",
         "owner": "nix-giant",
         "repo": "nix-darwin-emacs",
-        "rev": "4fe96193e9e5d00333642fbdc170584c4f1045b8",
+        "rev": "578458b2ead65ca57355def9653a6b792d80b93a",
         "type": "github"
       },
       "original": {
@@ -527,11 +527,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1773698177,
-        "narHash": "sha256-2gsu1HFTuzScHjVbq/XYYcipLRe1c+hsXE7pPfbOhUY=",
+        "lastModified": 1773716062,
+        "narHash": "sha256-APLix3BFwSgP8H7BOYD1WsN3lQr4x2SUJlHqqdPVLsc=",
         "owner": "openclaw",
         "repo": "nix-openclaw",
-        "rev": "83fc5534a9c80c6de04282d72b347ba8b336e729",
+        "rev": "4b1b9fb2994d9f80cff4db7fd187c70008f7061f",
         "type": "github"
       },
       "original": {
@@ -668,11 +668,11 @@
     },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1773713078,
-        "narHash": "sha256-aeR1c0R3VNPoMQD9/yUOpKEihhwj7C7ejemZLJMQbz4=",
+        "lastModified": 1773719938,
+        "narHash": "sha256-QyQSJbNUjX9ded67VHOey9kX+4zYjSHIg+ReJCxgLQ4=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "5f7ca9ab52cf303ec12876e19150cb079046fa0b",
+        "rev": "d5dcf11d7a1a7ed4a7c8f66125b43e6b314fd5ec",
         "type": "github"
       },
       "original": {
@@ -706,11 +706,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1773713549,
-        "narHash": "sha256-oCog1qj3y5eVhJqX3/f25wTIBOL9YHqKhJU3E4GNFb0=",
+        "lastModified": 1773722061,
+        "narHash": "sha256-WtMtQc3Rnar+rnvTq20SWCG7fOde1Dz4E6oOQgFhGmI=",
         "owner": "nix-community",
         "repo": "NUR",
-        "rev": "d37b1185513b61c1d77491fb7c2d0527fda8c301",
+        "rev": "4cdc2a958169bb99576e11f3e4ceae2e2fb6e620",
         "type": "github"
       },
       "original": {
