@@ -154,7 +154,7 @@
                   #zed-editor
                   #emacs-unstable
                   emacs-30
-                  element-desktop
+                  #element-desktop
                   remmina
                   sbcl
                   octaveFull
