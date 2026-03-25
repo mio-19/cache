@@ -482,11 +482,11 @@
         "nixpkgs": "nixpkgs"
       },
       "locked": {
-        "lastModified": 1774233978,
-        "narHash": "sha256-rT9wnIfbI1gjl0gq4nN8/5ZvFWn+K6QLwlyy6Gx8FDc=",
+        "lastModified": 1774406534,
+        "narHash": "sha256-x2+9p+Vct6v3XIgamvTfgC1icQBZpKfrJq50GLZGFM4=",
         "owner": "fufexan",
         "repo": "nix-gaming",
-        "rev": "4a583dd427ccf7d912282909a2702a6a547d8560",
+        "rev": "12131e4555267c8c78f0b12bffc427422bca417c",
         "type": "github"
       },
       "original": {
@@ -652,11 +652,11 @@
     },
     "nixpkgs-staging": {
       "locked": {
-        "lastModified": 1774391924,
-        "narHash": "sha256-slucCZzkTXebylBbR/CyCqE5jIbosfkEFyZiLy8lWBY=",
+        "lastModified": 1774398287,
+        "narHash": "sha256-gFKY1moYnGkYT/9SIEdQ41er43JB/XYwyom7c3UAvNk=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "06220b08dc9c8291417dd757a8dc416f88beb6b3",
+        "rev": "ab405e706061f8c4df065404f6e9a8e30eee205f",
         "type": "github"
       },
       "original": {
@@ -668,11 +668,11 @@
     },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1774395102,
-        "narHash": "sha256-xczLTOtxDtxafxPxx9jv3g0z7Cx+49p8H7gCCwexFKc=",
+        "lastModified": 1774405632,
+        "narHash": "sha256-TvrpnqxP9N+K4LqIHFGJg62w2gkZNe+aJAAtf6+JwSE=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "2ac71c20e267fba480ec8b38d80333e189b89dfc",
+        "rev": "e6ebc81ebf9186193375cef03b18fa172bd3f533",
         "type": "github"
       },
       "original": {
@@ -706,11 +706,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1774394903,
-        "narHash": "sha256-n29TUF0/Y3pRxOjsU5iflfAn01QA1rP5NUs8hSCGh1s=",
+        "lastModified": 1774406220,
+        "narHash": "sha256-G7U65JSX8APGGnoUgs9evQ2kx0gvAx59llEpfvSm9/M=",
         "owner": "nix-community",
         "repo": "NUR",
-        "rev": "cfc4c0388f0dc7b970f6116fb4e084a1141bbffb",
+        "rev": "39bf526b429d17f03749223e9d52caddb257a4ed",
         "type": "github"
       },
       "original": {
