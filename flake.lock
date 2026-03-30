@@ -37,11 +37,11 @@
         "typelevel-nix": "typelevel-nix"
       },
       "locked": {
-        "lastModified": 1774906674,
-        "narHash": "sha256-Ff2KBdx0WSkyXSLCl5x+YHbn8U6S82p0ZaxVL30a1Rs=",
+        "lastModified": 1774909579,
+        "narHash": "sha256-jZbuAtXYJ09dUwRASD+7w54oRr5XNMR9t8U+ux6fkKQ=",
         "ref": "refs/heads/main",
-        "rev": "11c706ed494626b02042123f6e72962bea037f41",
-        "revCount": 241,
+        "rev": "88ce4be149c36e8a70a4f346fa8b2ace26153bf8",
+        "revCount": 242,
         "type": "git",
         "url": "https://codeberg.org/chester-lang/chester.git"
       },
@@ -668,11 +668,11 @@
     },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1774906993,
-        "narHash": "sha256-sr4uRN7Qvt/A6NWUWvQm3atY2+JdlsCiUErDKHW2BfI=",
+        "lastModified": 1774909977,
+        "narHash": "sha256-iAPdFlLIX4gTqc5Mga5xLz0yOMT8ER7eOD8rvO5pse4=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "9f7496c3e701b89d28e5e3eff89cae62af648e10",
+        "rev": "f9064fb5d636d62d6945ac208ade42d2e626458c",
         "type": "github"
       },
       "original": {
@@ -706,11 +706,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1774906693,
-        "narHash": "sha256-jJiWmoE+VuV8ReJG9SRYCkgWiPsVwJZAilskufT+FL4=",
+        "lastModified": 1774907651,
+        "narHash": "sha256-EQu9QPxdJGP0NbhpaNwxCWtskjoeTh+mQ2chzXyWAC8=",
         "owner": "nix-community",
         "repo": "NUR",
-        "rev": "285c57df105bf16194c40629a796e1b7f4bd45b3",
+        "rev": "784fed2343a940e1819c5b22aa770f0e346e0934",
         "type": "github"
       },
       "original": {
