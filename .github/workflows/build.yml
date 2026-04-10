@@ -90,7 +90,7 @@ jobs:
     - name: Build nix packages
       if: runner.os == 'Linux'
       run: |
-        timeout --foreground 5h nix run nixpkgs#nix-fast-build -- --max-jobs 1 \
+        timeout 5h nix run nixpkgs#nix-fast-build -- --max-jobs 1 \
           --no-nom \
           -f .#packages.${{ env.SYSTEM }} ${{ matrix.nixpkgs-override }}
     - name: Build nix packages
