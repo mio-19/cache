@@ -13,10 +13,10 @@
         "rust-overlay": "rust-overlay"
       },
       "locked": {
-        "lastModified": 1775925761,
-        "narHash": "sha256-WuCWgrjsv+njl4nKCaUkKRL4YZmDqDG+P7f113d/3cw=",
+        "lastModified": 1775934205,
+        "narHash": "sha256-nnAYaqGPeCGI7a49P2puGMYLh5CNMEceD93S8hdSkJE=",
         "ref": "refs/heads/main",
-        "rev": "913cab6f5d68c8ca913914747b2857cdb1b85e0e",
+        "rev": "5ea4db3acd41553c44c74ef4c54104844078f583",
         "shallow": true,
         "type": "git",
         "url": "https://github.com/lonerOrz/nyx-loner.git"
@@ -652,11 +652,11 @@
     },
     "nixpkgs-staging": {
       "locked": {
-        "lastModified": 1775931079,
-        "narHash": "sha256-NSKIUW7EHla9rAacS4H0bRygOQ/10dZkCaEifgPuj30=",
+        "lastModified": 1775934303,
+        "narHash": "sha256-OFpchMNc8wrdm1xnVDRR+MGy8RYEAqOzkGEGOC9CNHQ=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "7d573276dc6ee68411988efdbac3592d0523d0b0",
+        "rev": "23e587ab250782b0f1132374362c3456898d69df",
         "type": "github"
       },
       "original": {
@@ -668,11 +668,11 @@
     },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1775933299,
-        "narHash": "sha256-LwO8WwrYPH7E1AQ5iasq6epnBLKdaoyK1UJGnKBjaYI=",
+        "lastModified": 1775935760,
+        "narHash": "sha256-uYd0s/q23Nx4qX1Ht+10SgEQgP9zYqYHEFMla0GejJo=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "e473b7ded3c5be1c4372ac6777487df6925fa92c",
+        "rev": "8eadeb313ce1c42afd04ef5de815d7baa4b626a9",
         "type": "github"
       },
       "original": {
