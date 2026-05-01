@@ -58,11 +58,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1777557949,
-        "narHash": "sha256-97mWEAM7AI2OUhTI6G4sTl621CFi7J6CkbJ842hD7eM=",
+        "lastModified": 1777610695,
+        "narHash": "sha256-XRR33fdlGU+hsCwvMYf4+7lZgodiCL7mQkKIdBzwpIA=",
         "owner": "nix-giant",
         "repo": "nix-darwin-emacs",
-        "rev": "979b5aa80e9fa054ef075b9b6f340e47a90ac6ff",
+        "rev": "c21637d9cf461cec80566f21674eebe27ae76c2a",
         "type": "github"
       },
       "original": {
@@ -459,11 +459,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1777364832,
-        "narHash": "sha256-c9AvQrhfwCAVLG8WdFuNOOx/oSPnkw4WDpIlVJ9Cilk=",
+        "lastModified": 1777614199,
+        "narHash": "sha256-k8fgidVoDNQTZWGLdhe6kLgpsLcydhPzal5YKVwxD2U=",
         "ref": "refs/heads/development",
-        "rev": "f0813b4aefdca5f66a5de7633902d136a9753f88",
-        "revCount": 1592,
+        "rev": "79f3e3cc5c643138b7b3405c42681451be85d838",
+        "revCount": 1598,
         "type": "git",
         "url": "https://github.com/Jovian-Experiments/Jovian-NixOS.git"
       },
@@ -569,11 +569,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1777517753,
-        "narHash": "sha256-VEdA/BAu/Av6qx+rn1reLS/LcPZ3OXsQpn5d4+wiEzg=",
+        "lastModified": 1777609855,
+        "narHash": "sha256-v2o7REW4D/gt5QxOtcCnVD1Nz+Q/ZTpzndupIQGrJYQ=",
         "owner": "nixified-ai",
         "repo": "flake",
-        "rev": "ee26d5af03c966169941f33e08213ddb2677f4e2",
+        "rev": "4cf7c10e6081559d18527bd96f3155f1bf6e46a8",
         "type": "github"
       },
       "original": {
@@ -668,11 +668,11 @@
     },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1777606664,
-        "narHash": "sha256-/wUGDx5W9Ei03ZiqsAqJat2y5TJx0chgIcaVcBihK8o=",
+        "lastModified": 1777617282,
+        "narHash": "sha256-ycf2YoFrPSMN3oxkneGBt943P0Mel/b+TU4chrKITS0=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "457de3575e2ed7e4dee3308ebad09e3bdaf93913",
+        "rev": "27c716e17cea810e3887285106dcb94e2d8c2d86",
         "type": "github"
       },
       "original": {
@@ -706,11 +706,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1777607526,
-        "narHash": "sha256-Q6NUtYxoZS6xiIX5MDXDkDgPtR0tM/HNhooIXYtIEM0=",
+        "lastModified": 1777617211,
+        "narHash": "sha256-92uftexGaLmAFzsJWjVepGPnwg5pEEECTDfKw2a8clI=",
         "owner": "nix-community",
         "repo": "NUR",
-        "rev": "244cac10d1a19796d906b16cd404922a199af855",
+        "rev": "14a6a6f06599697eaa7a1327791799adb0237346",
         "type": "github"
       },
       "original": {
