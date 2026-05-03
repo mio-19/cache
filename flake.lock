@@ -13,10 +13,10 @@
         "rust-overlay": "rust-overlay"
       },
       "locked": {
-        "lastModified": 1777828231,
-        "narHash": "sha256-oco0/vBN7b7J8JmOBAo71Wy4jyYu1AHVe8f7OLbExQo=",
+        "lastModified": 1777838699,
+        "narHash": "sha256-Kxiqch1yDYBsuIVDEOqt2jHYwGUDS1nAVMpCvW8q2hk=",
         "ref": "refs/heads/main",
-        "rev": "2ea0d66d094727b9490f44c07a31302606e61649",
+        "rev": "5362977794f5dfba8d6f86a220b63f1eecbb2d7a",
         "shallow": true,
         "type": "git",
         "url": "https://github.com/lonerOrz/nyx-loner.git"
@@ -459,11 +459,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1777614199,
-        "narHash": "sha256-k8fgidVoDNQTZWGLdhe6kLgpsLcydhPzal5YKVwxD2U=",
+        "lastModified": 1777835880,
+        "narHash": "sha256-zcxPYK9s4ZazYkmO5QMi1Vcm8v8JRmeOwOm3/Yey5Tk=",
         "ref": "refs/heads/development",
-        "rev": "79f3e3cc5c643138b7b3405c42681451be85d838",
-        "revCount": 1598,
+        "rev": "6783eb884b9bff3bb9f206e6d4a1d9e1838bb2c9",
+        "revCount": 1600,
         "type": "git",
         "url": "https://github.com/Jovian-Experiments/Jovian-NixOS.git"
       },
@@ -668,11 +668,11 @@
     },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1777834858,
-        "narHash": "sha256-TwIWEo/6TFUWOdwN+VpOo6q5P3jcTDVGtaMn2MU/bfY=",
+        "lastModified": 1777839915,
+        "narHash": "sha256-2gf1OPyv7AYIKe0ZSCK/dbxMqBUQqfr5TFwWKc/gupQ=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "ea5da5202c7b588f4cd4d1dafc34e954c0e45ee3",
+        "rev": "92d0fce356e19949595f6c31716263bf0a457190",
         "type": "github"
       },
       "original": {
@@ -706,11 +706,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1777833248,
-        "narHash": "sha256-HCan3UcndGXnaiQVQeXuCyqus0/QuEd5gv3FaJ8anvQ=",
+        "lastModified": 1777838712,
+        "narHash": "sha256-i38S3WizLR1NUOGWVdzuBFpwrsWUUc/y6zX2frp+H1I=",
         "owner": "nix-community",
         "repo": "NUR",
-        "rev": "959ee39d0321e9f872e88fd564d5b4f5ad981ce2",
+        "rev": "c4c751a8e71353c3daea8f9dc477c368d3859e7d",
         "type": "github"
       },
       "original": {
