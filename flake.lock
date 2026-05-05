@@ -524,14 +524,15 @@
         "nix-openclaw-tools": "nix-openclaw-tools",
         "nixpkgs": [
           "nixpkgs"
-        ]
+        ],
+        "qmd": "qmd"
       },
       "locked": {
-        "lastModified": 1778001770,
-        "narHash": "sha256-47RQW9wNZjEql+l6ONkB+qB6vVGsC5r+Pi+5uCdSdQg=",
+        "lastModified": 1778005465,
+        "narHash": "sha256-AYJW30MkyZQ8Dz1B3W0QmY47YW/70INATQvAOO8pcH8=",
         "owner": "openclaw",
         "repo": "nix-openclaw",
-        "rev": "4a918c46eeecb052d827a3ffb50fb47d2a78c163",
+        "rev": "3abd2d14cb152cad51dcea039c396b713f432090",
         "type": "github"
       },
       "original": {
@@ -650,11 +651,11 @@
     },
     "nixpkgs-staging": {
       "locked": {
-        "lastModified": 1778000269,
-        "narHash": "sha256-f+B02QF7I/KbddYPpXt1W8kD7oCqQfHarK9izhTgAvk=",
+        "lastModified": 1778005929,
+        "narHash": "sha256-sJnzdQkMbxW7LAfjgYkZ8lR8IqY2rtU4wEqvHft72zE=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "7b0da7bff18aa4c26c354850b23c9fe24c2aca41",
+        "rev": "7d8a44c4215b150c25cbd9c2915537c790d69ced",
         "type": "github"
       },
       "original": {
@@ -682,11 +683,11 @@
     },
     "nixpkgs_3": {
       "locked": {
-        "lastModified": 1778004486,
-        "narHash": "sha256-ak9m9e2l7FK5A6fiemO+Q2iwyRI3AISwAJLFYINnlk8=",
+        "lastModified": 1778011092,
+        "narHash": "sha256-7AdpmuxulleBZOFuCCJ1pxCOOPOsOXLrJ/LFcuWOvIQ=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "ae66612cd44d792a1579dc2c8928e38d5c19b964",
+        "rev": "513115ba0cfde640606bff867047392bd115fadd",
         "type": "github"
       },
       "original": {
@@ -720,11 +721,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1778003328,
-        "narHash": "sha256-7/RUNcp/ha++JzKc0Olb7G0xnPLS07GqqpYS2DQLok8=",
+        "lastModified": 1778009856,
+        "narHash": "sha256-/Sjozg9gX3G+y8oCWeJANErRbJJz7htkOfUDiCjhpi4=",
         "owner": "nix-community",
         "repo": "NUR",
-        "rev": "1564cfaba4bdfa14b97f141fff0f9e86e5ba220a",
+        "rev": "b50a85cdc31b4b423ab81871009032b375cee6fc",
         "type": "github"
       },
       "original": {
@@ -755,6 +756,32 @@
       "original": {
         "owner": "Janrupf",
         "repo": "python-flexseal",
+        "type": "github"
+      }
+    },
+    "qmd": {
+      "inputs": {
+        "flake-utils": [
+          "nix-openclaw",
+          "flake-utils"
+        ],
+        "nixpkgs": [
+          "nix-openclaw",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1775429264,
+        "narHash": "sha256-bqIVaNRTa8H5vrw3RwsD7QdtTa0xNvRuEVzlzE1hIBQ=",
+        "owner": "tobi",
+        "repo": "qmd",
+        "rev": "65cd1b3fd02891d1ee0eefa751620918664fa321",
+        "type": "github"
+      },
+      "original": {
+        "owner": "tobi",
+        "ref": "v2.1.0",
+        "repo": "qmd",
         "type": "github"
       }
     },
