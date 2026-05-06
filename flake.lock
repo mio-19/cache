@@ -58,11 +58,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1777954414,
-        "narHash": "sha256-hwKfbTh7/N9/OBDvggb5fWXKmfpKeKmrXtu5gz9e/aY=",
+        "lastModified": 1778041868,
+        "narHash": "sha256-5Pj2CrY6JvFZmuvhGk0MU8UGnbd3u675tuDSAodybGw=",
         "owner": "nix-giant",
         "repo": "nix-darwin-emacs",
-        "rev": "014b6702a4e6834c91d3683771f7802758e6f800",
+        "rev": "35152ba391c62dbcb9cbe18016dfad12212e579d",
         "type": "github"
       },
       "original": {
@@ -528,11 +528,11 @@
         "qmd": "qmd"
       },
       "locked": {
-        "lastModified": 1778015518,
-        "narHash": "sha256-g00Q4fuSQysG4y0YvIiQqH6PUqN5vMVAyKQcCzTUEos=",
+        "lastModified": 1778048070,
+        "narHash": "sha256-RpzdnYf7QSwbCQJMnCLCSDnXslNugwbU4NVKRM6gdf0=",
         "owner": "openclaw",
         "repo": "nix-openclaw",
-        "rev": "ce0da31f81d7f5a06fe03063915a9b65af777514",
+        "rev": "879885aecdfd247ef8af361e7ce5a6744e234994",
         "type": "github"
       },
       "original": {
@@ -683,11 +683,11 @@
     },
     "nixpkgs_3": {
       "locked": {
-        "lastModified": 1778036283,
-        "narHash": "sha256-62EWg6lI0qyzm7oAx5cAnGkLutvJsRBe0KkEW2JDZCE=",
+        "lastModified": 1778048570,
+        "narHash": "sha256-y8WJVK5KD9hNaTJBPZeN7Ehn9/S/41Aqutl/KgLjhic=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "ed67bc86e84e51d4a88e73c7fd36006dc876476f",
+        "rev": "a2d5cbaaef52a4498ea0de36816f23d2be4de4e0",
         "type": "github"
       },
       "original": {
@@ -721,11 +721,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1778037722,
-        "narHash": "sha256-WFkZofxcO5KlhaZM1uLSXFHlumYTZf69GAvwhFVgL+4=",
+        "lastModified": 1778048802,
+        "narHash": "sha256-KgXGfVxnUGyIjirpqnc49wK/0Sb3TZ3cPujV3h2eAJk=",
         "owner": "nix-community",
         "repo": "NUR",
-        "rev": "5f5d780869417a03d265c82de0d0ac41f2b1d729",
+        "rev": "452c5cea023572b2fe400a512d25b9035f4f15ae",
         "type": "github"
       },
       "original": {
