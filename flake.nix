@@ -228,6 +228,13 @@
                   ;
               })
               (lib.mkIf (system == "x86_64-linux") {
+                vbox_ext = pkgs.virtualbox.override {
+                  enableHardening = true;
+                  headless = false;
+                  enableWebService = false;
+                  enableKvm = false;
+                  extensionPack = pkgs.virtualboxExtpack;
+                };
                 wine64_package = inputs.nix-gaming.packages.${pkgs.stdenv.hostPlatform.system}.wine-tkg;
                 #comfyuinvidia = inputs.nixified-ai.packages."${pkgs.stdenv.hostPlatform.system}".comfyui-nvidia;
                 /*
