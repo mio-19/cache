@@ -204,7 +204,7 @@
                     ];
                   }
                 );
-                chester = (inputs.chester.packages."${pkgs.stdenv.hostPlatform.system}".default);
+                #chester = (inputs.chester.packages."${pkgs.stdenv.hostPlatform.system}".default);
                 inherit (pkgs.emacs.pkgs) magit nix-mode agda2-mode;
               }
               (lib.mkIf (pkgs.stdenv.isLinux) {
@@ -356,12 +356,11 @@
 
                     paths =
                       let
-                        linuxv3gcc = (pkgs-cuda.linuxPackages_cachyos-gcc.cachyOverride { mArch = "GENERIC_V3"; });
-                        linuxv4gcc = (pkgs.linuxPackages_cachyos-gcc.cachyOverride { mArch = "GENERIC_V4"; });
-                        linuxzen4gcc = (pkgs.linuxPackages_cachyos-gcc.cachyOverride { mArch = "ZEN4"; });
-                        linuxv3 = (pkgs.linuxPackages_cachyos-lto.cachyOverride { mArch = "GENERIC_V3"; });
-                        linuxv4 = (pkgs.linuxPackages_cachyos-lto.cachyOverride { mArch = "GENERIC_V4"; });
-                        linuxzen4 = (pkgs.linuxPackages_cachyos-lto.cachyOverride { mArch = "ZEN4"; });
+                        linuxv3gcc = pkgs-cuda.linuxPackages_cachyos-lts.cachyOverride {
+                          cachyVars = pkgs-cuda.linuxPackages_cachyos-lts.kernel.cachyConfig.cachyVars // {
+                            "_processor_opt" = "GENERIC_V3";
+                          };
+                        };
                       in
                       [
                         linuxv3gcc.kernel
@@ -392,7 +391,11 @@
 
                     paths =
                       let
-                        linuxzen4lts = (pkgs.linuxPackages_cachyos-lts.cachyOverride { mArch = "ZEN4"; });
+                        linuxzen4lts = pkgs.linuxPackages_cachyos-lts.cachyOverride {
+                          cachyVars = pkgs.linuxPackages_cachyos-lts.kernel.cachyConfig.cachyVars // {
+                            "_processor_opt" = "ZEN4";
+                          };
+                        };
                       in
                       [
                         linuxzen4lts.kernel
@@ -407,7 +410,11 @@
 
                     paths =
                       let
-                        linuxzen4 = (pkgs.linuxPackages_cachyos-lto.cachyOverride { mArch = "ZEN4"; });
+                        linuxzen4 = pkgs.linuxPackages_cachyos-lto.cachyOverride {
+                          cachyVars = pkgs.linuxPackages_cachyos-lto.kernel.cachyConfig.cachyVars // {
+                            "_processor_opt" = "ZEN4";
+                          };
+                        };
                       in
                       [
                         linuxzen4.kernel
