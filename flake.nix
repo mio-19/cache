@@ -228,6 +228,7 @@
                   ;
               })
               (lib.mkIf (system == "x86_64-linux") {
+                blender_cuda = pkgs-cuda.blender;
                 vbox_ext = pkgs.virtualbox.override {
                   enableHardening = true;
                   headless = false;
