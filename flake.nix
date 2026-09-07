@@ -217,7 +217,6 @@
                   aseprite
                   wiliwili
                   #freecad
-                  plezy
                   ;
                 inherit (pkgs.kdePackages)
                   kwin
@@ -332,6 +331,7 @@
                     name = "packagessss";
 
                     paths = with pkgs; [
+                      plezy
                       gitbutler
                       #davinci-resolve
                       steam
