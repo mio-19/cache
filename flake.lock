@@ -458,11 +458,11 @@
         "nixpkgs": "nixpkgs"
       },
       "locked": {
-        "lastModified": 1788839872,
-        "narHash": "sha256-JrJkREqNWmXhTgiXqZQkl6tusimI7fR+a9tu5npmNM0=",
+        "lastModified": 1789012916,
+        "narHash": "sha256-sLTZXAGMWkiZt5r83T0Om2FqXfPTSnVFHnC3Us28KrU=",
         "owner": "fufexan",
         "repo": "nix-gaming",
-        "rev": "7b9ddc7b9dc0283e45f616311384b84239a33060",
+        "rev": "640a9727e73ff02f982ecdfff1d4648927a1d280",
         "type": "github"
       },
       "original": {
@@ -544,11 +544,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1788933060,
-        "narHash": "sha256-yuWhhwYdh9p26dvUAIewtOD4XKeOcLMApemyAB5Gk4M=",
+        "lastModified": 1789011634,
+        "narHash": "sha256-8LYSRyzHSK2LuKUKA+G5zjAaBOqkz6XebIgVbf2GWZ4=",
         "owner": "nixified-ai",
         "repo": "flake",
-        "rev": "363704a4002d5b570d8fc8c5204d1224791cdcac",
+        "rev": "148fa09710a362c212e4e1f14f5fdead846cf9d3",
         "type": "github"
       },
       "original": {
@@ -659,11 +659,11 @@
     },
     "nixpkgs_3": {
       "locked": {
-        "lastModified": 1788996713,
-        "narHash": "sha256-Ok41s1TW1bqoCUncH8BwRVc8I+IelsyfROIkNIj/va0=",
+        "lastModified": 1789012029,
+        "narHash": "sha256-1CBkBf+Nhggykzlx0jvXrj5rk20btl+tK8Fa8Ml/BL4=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "425014edadcbf4993a59aaf7d6f3cd3867d83726",
+        "rev": "d5dfd8e6716dde34398bc14bc87c10dece9c8c68",
         "type": "github"
       },
       "original": {
@@ -697,11 +697,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1788998008,
-        "narHash": "sha256-yEnfWzH7vGktfpJKW59KDRUajEvT+8CO4l5s2eI0RWc=",
+        "lastModified": 1789013193,
+        "narHash": "sha256-tnfJxUQGyL63Gbw582SnMLiC+0tX9FRA57W0fqKXtkU=",
         "owner": "nix-community",
         "repo": "NUR",
-        "rev": "ba99705ccd2f8b7fa747171e62400e8d8a780d7e",
+        "rev": "097e153772879cf6ec593b41309b41352c3bce67",
         "type": "github"
       },
       "original": {
