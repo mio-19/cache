@@ -5,15 +5,14 @@
     #nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
     nixpkgs.url = "github:NixOS/nixpkgs/master";
     nixpkgs-staging.url = "github:NixOS/nixpkgs/staging";
-    darwin-emacs = {
-      url = "github:nix-giant/nix-darwin-emacs";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    #darwin-emacs = {
+    #  url = "github:nix-giant/nix-darwin-emacs";
+    #  inputs.nixpkgs.follows = "nixpkgs";
+    #};
     #chaotic.url = "git+https://github.com/lonerOrz/nyx-loner.git?shallow=1";
     chaotic.url = "github:chaotic-cx/nyx";
     # bad for cache:
     chaotic.inputs.nixpkgs.follows = "nixpkgs";
-    chaotic.inputs.jovian.follows = "jovian";
     #jovian.follows = "chaotic/jovian";
     jovian = {
       url = "git+https://github.com/Jovian-Experiments/Jovian-NixOS.git";
@@ -58,14 +57,14 @@
       url = "github:fufexan/nix-gaming";
       inputs.flake-parts.follows = "nur/flake-parts";
     };
-    nix-openclaw = {
-      url = "github:openclaw/nix-openclaw";
-      inputs.nixpkgs.follows = "nixpkgs";
-      #inputs.home-manager.follows = "home-manager";
-      inputs.home-manager.inputs.nixpkgs.follows = "nixpkgs";
-      #inputs.flake-utils.follows = "flake-utils";
-      inputs.nix-steipete-tools.inputs.nixpkgs.follows = "nixpkgs";
-    };
+    #nix-openclaw = {
+    #  url = "github:openclaw/nix-openclaw";
+    #  inputs.nixpkgs.follows = "nixpkgs";
+    #  #inputs.home-manager.follows = "home-manager";
+    #  inputs.home-manager.inputs.nixpkgs.follows = "nixpkgs";
+    #  #inputs.flake-utils.follows = "flake-utils";
+    #  inputs.nix-steipete-tools.inputs.nixpkgs.follows = "nixpkgs";
+    #};
   };
 
   outputs =
@@ -106,15 +105,10 @@
                   [
                     inputs.jovian.overlays.default
                     inputs.chaotic.overlays.default
-                    #inputs.emacs-overlay.overlays.package
-                    inputs.nix-openclaw.overlays.default
                   ]
                 else
                   [
-                    inputs.darwin-emacs.overlays.default
                     inputs.chaotic.overlays.default
-                    #inputs.emacs-overlay.overlays.package
-                    inputs.nix-openclaw.overlays.default
                   ]
               );
               config.permittedInsecurePackages = [
@@ -141,31 +135,20 @@
               ];
             };
             lib = inputs.nixpkgs.lib;
-            epkgs = pkgs.emacsPackagesFor pkgs.emacs-30;
           in
           {
             packages = lib.mkMerge [
-              (lib.mkIf pkgs.stdenv.isDarwin {
-                inherit (pkgs)
-                  lix
-                  ;
-              })
               (lib.mkIf (pkgs.stdenv.isDarwin && pkgs.stdenv.hostPlatform.isAarch64) {
                 inherit (pkgs)
                   #zed-editor
                   #emacs-unstable
-                  emacs-30
                   #element-desktop
                   remmina
                   sbcl
                   octaveFull
+                  supertuxkart
+                  tuxguitar
                   ;
-                emacs-with-pack = epkgs.emacsWithPackages [
-                  epkgs.nix-mode
-                  epkgs.magit
-                  epkgs.agda2-mode
-                ];
-                #lix_stable = pkgs.lixPackageSets.stable.lix;
               })
               {
                 /*
@@ -181,8 +164,6 @@
                     name = "universal";
 
                     paths = with pkgs; [
-                      openclaw
-                      musescore
                       audacity
                       inkscape
                       noto-fonts-color-emoji
@@ -315,7 +296,7 @@
                     paths = with pkgs-cuda; [
                       davinci-resolve
                       retroarch-full
-                      krita
+                      #krita
                       nix
                       nixd
                       pixelorama
@@ -341,7 +322,7 @@
                       ryubing
                       openrazer-daemon
                       gamescope_git
-                      ollama-cuda
+                      #ollama-cuda
                       android-translation-layer
                       retroarch-full
                       wineWowPackages.waylandFull
@@ -351,30 +332,27 @@
                     ];
                   }
                 );
-                kernel2 = (
-                  pkgs.symlinkJoin {
-                    name = "kernel2-linux-kernel-modules";
+                /*
+                  # Custom cachyOverride kernels trigger >5h build timeout on GitHub Actions;
+                  # config-public uses prebuilt kernels from chaotic-nyx instead.
+                  kernel2 = (
+                    pkgs.symlinkJoin {
+                      name = "kernel2-linux-kernel-modules";
 
-                    paths =
-                      let
-                        linuxv3gcc = pkgs-cuda.linuxPackages_cachyos-lts.cachyOverride {
-                          cachyVars = pkgs-cuda.linuxPackages_cachyos-lts.kernel.cachyConfig.cachyVars // {
-                            "_processor_opt" = "GENERIC_V3";
+                      paths =
+                        let
+                          linuxv3gcc = pkgs-cuda.linuxPackages_cachyos-lts.cachyOverride {
+                            cachyVars = pkgs-cuda.linuxPackages_cachyos-lts.kernel.cachyConfig.cachyVars // {
+                              "_processor_opt" = "GENERIC_V3";
+                            };
                           };
-                        };
-                      in
-                      [
-                        linuxv3gcc.kernel
-                        /*
-                          linuxv3gcc.zfs_cachyos
-                          linuxv3gcc.xone
-                          linuxv3gcc.vmware
-                          linuxv3gcc.nvidiaPackages.stable.open
-                        */
-                        #linuxv3.kernel
-                      ];
-                  }
-                );
+                        in
+                        [
+                          linuxv3gcc.kernel
+                        ];
+                    }
+                  );
+                */
                 #linuxv3_kernel = (pkgs.linuxPackages_cachyos-lto.cachyOverride { mArch = "GENERIC_V3"; }).kernel;
                 kerneljovian = (
                   pkgs.symlinkJoin {
@@ -386,44 +364,46 @@
                     ];
                   }
                 );
-                kernelzen4lts = (
-                  pkgs.symlinkJoin {
-                    name = "default-linux-kernel-modules-zen4lts";
+                /*
+                  kernelzen4lts = (
+                    pkgs.symlinkJoin {
+                      name = "default-linux-kernel-modules-zen4lts";
 
-                    paths =
-                      let
-                        linuxzen4lts = pkgs.linuxPackages_cachyos-lts.cachyOverride {
-                          cachyVars = pkgs.linuxPackages_cachyos-lts.kernel.cachyConfig.cachyVars // {
-                            "_processor_opt" = "ZEN4";
+                      paths =
+                        let
+                          linuxzen4lts = pkgs.linuxPackages_cachyos-lts.cachyOverride {
+                            cachyVars = pkgs.linuxPackages_cachyos-lts.kernel.cachyConfig.cachyVars // {
+                              "_processor_opt" = "ZEN4";
+                            };
                           };
-                        };
-                      in
-                      [
-                        linuxzen4lts.kernel
-                        linuxzen4lts.zfs_cachyos
-                        linuxzen4lts.nvidiaPackages.stable.open
-                      ];
-                  }
-                );
-                kernel1 = (
-                  pkgs.symlinkJoin {
-                    name = "default-linux-kernel-modules";
+                        in
+                        [
+                          linuxzen4lts.kernel
+                          linuxzen4lts.zfs_cachyos
+                          linuxzen4lts.nvidiaPackages.stable.open
+                        ];
+                    }
+                  );
+                  kernel1 = (
+                    pkgs.symlinkJoin {
+                      name = "default-linux-kernel-modules";
 
-                    paths =
-                      let
-                        linuxzen4 = pkgs.linuxPackages_cachyos-lto.cachyOverride {
-                          cachyVars = pkgs.linuxPackages_cachyos-lto.kernel.cachyConfig.cachyVars // {
-                            "_processor_opt" = "ZEN4";
+                      paths =
+                        let
+                          linuxzen4 = pkgs.linuxPackages_cachyos-lto.cachyOverride {
+                            cachyVars = pkgs.linuxPackages_cachyos-lto.kernel.cachyConfig.cachyVars // {
+                              "_processor_opt" = "ZEN4";
+                            };
                           };
-                        };
-                      in
-                      [
-                        linuxzen4.kernel
-                        linuxzen4.zfs_cachyos
-                        linuxzen4.nvidiaPackages.stable.open
-                      ];
-                  }
-                );
+                        in
+                        [
+                          linuxzen4.kernel
+                          linuxzen4.zfs_cachyos
+                          linuxzen4.nvidiaPackages.stable.open
+                        ];
+                    }
+                  );
+                */
               })
             ];
           };
